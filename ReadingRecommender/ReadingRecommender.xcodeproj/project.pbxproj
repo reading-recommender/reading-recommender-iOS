@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC4A379D2293643900FE658F /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC4A379C2293643900FE658F /* Pacifico-Regular.ttf */; };
+		EC4A379F229368D100FE658F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A379E229368D100FE658F /* Book.swift */; };
+		EC4A37A12293690B00FE658F /* BookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A37A02293690B00FE658F /* BookController.swift */; };
 		EC97509322931AEF00CC391A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97509222931AEF00CC391A /* AppDelegate.swift */; };
 		EC97509822931AEF00CC391A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC97509622931AEF00CC391A /* Main.storyboard */; };
 		EC97509A22931AF300CC391A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC97509922931AF300CC391A /* Assets.xcassets */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC4A379C2293643900FE658F /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
+		EC4A379E229368D100FE658F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		EC4A37A02293690B00FE658F /* BookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookController.swift; sourceTree = "<group>"; };
 		EC97508F22931AEF00CC391A /* ReadingRecommender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingRecommender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC97509222931AEF00CC391A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC97509722931AEF00CC391A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +91,7 @@
 				EC97509222931AEF00CC391A /* AppDelegate.swift */,
 				EC97509922931AF300CC391A /* Assets.xcassets */,
 				EC97509E22931AF300CC391A /* Info.plist */,
+				EC4A379C2293643900FE658F /* Pacifico-Regular.ttf */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -115,6 +122,7 @@
 			children = (
 				EC9750B52293443600CC391A /* UserController.swift */,
 				EC9750B7229344A600CC391A /* QuestionController.swift */,
+				EC4A37A02293690B00FE658F /* BookController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 			children = (
 				EC9750B122933FA500CC391A /* Question.swift */,
 				EC9750B32293439300CC391A /* User.swift */,
+				EC4A379E229368D100FE658F /* Book.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +198,7 @@
 				EC97509D22931AF300CC391A /* LaunchScreen.storyboard in Resources */,
 				EC9750BE22935B4000CC391A /* Book.storyboard in Resources */,
 				EC9750B0229335F600CC391A /* Question.storyboard in Resources */,
+				EC4A379D2293643900FE658F /* Pacifico-Regular.ttf in Resources */,
 				EC97509A22931AF300CC391A /* Assets.xcassets in Resources */,
 				EC9750AE2293322B00CC391A /* Login.storyboard in Resources */,
 				EC97509822931AEF00CC391A /* Main.storyboard in Resources */,
@@ -202,6 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC4A37A12293690B00FE658F /* BookController.swift in Sources */,
+				EC4A379F229368D100FE658F /* Book.swift in Sources */,
 				EC9750B8229344A600CC391A /* QuestionController.swift in Sources */,
 				EC97509322931AEF00CC391A /* AppDelegate.swift in Sources */,
 				EC9750BC22934CC900CC391A /* QuestionViewController.swift in Sources */,
