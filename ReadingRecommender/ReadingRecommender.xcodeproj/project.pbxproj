@@ -17,6 +17,9 @@
 		EC9750B42293439300CC391A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9750B32293439300CC391A /* User.swift */; };
 		EC9750B62293443600CC391A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9750B52293443600CC391A /* UserController.swift */; };
 		EC9750B8229344A600CC391A /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9750B7229344A600CC391A /* QuestionController.swift */; };
+		EC9750BA22934ADF00CC391A /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9750B922934ADF00CC391A /* HomeScreenViewController.swift */; };
+		EC9750BC22934CC900CC391A /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9750BB22934CC900CC391A /* QuestionViewController.swift */; };
+		EC9750BE22935B4000CC391A /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9750BD22935B4000CC391A /* Book.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,13 +29,15 @@
 		EC97509922931AF300CC391A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC97509C22931AF300CC391A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC97509E22931AF300CC391A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC9750AC22931F9900CC391A /* DummyText.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = DummyText.rtf; sourceTree = "<group>"; };
 		EC9750AD2293322B00CC391A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		EC9750AF229335F600CC391A /* Question.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
 		EC9750B122933FA500CC391A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		EC9750B32293439300CC391A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EC9750B52293443600CC391A /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		EC9750B7229344A600CC391A /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
+		EC9750B922934ADF00CC391A /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		EC9750BB22934CC900CC391A /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		EC9750BD22935B4000CC391A /* Book.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,7 @@
 				EC97509B22931AF300CC391A /* LaunchScreen.storyboard */,
 				EC9750AD2293322B00CC391A /* Login.storyboard */,
 				EC9750AF229335F600CC391A /* Question.storyboard */,
+				EC9750BD22935B4000CC391A /* Book.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -98,7 +104,8 @@
 		EC9750A622931CEF00CC391A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EC9750AC22931F9900CC391A /* DummyText.rtf */,
+				EC9750B922934ADF00CC391A /* HomeScreenViewController.swift */,
+				EC9750BB22934CC900CC391A /* QuestionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC97509D22931AF300CC391A /* LaunchScreen.storyboard in Resources */,
+				EC9750BE22935B4000CC391A /* Book.storyboard in Resources */,
 				EC9750B0229335F600CC391A /* Question.storyboard in Resources */,
 				EC97509A22931AF300CC391A /* Assets.xcassets in Resources */,
 				EC9750AE2293322B00CC391A /* Login.storyboard in Resources */,
@@ -196,9 +204,11 @@
 			files = (
 				EC9750B8229344A600CC391A /* QuestionController.swift in Sources */,
 				EC97509322931AEF00CC391A /* AppDelegate.swift in Sources */,
+				EC9750BC22934CC900CC391A /* QuestionViewController.swift in Sources */,
 				EC9750B222933FA500CC391A /* Question.swift in Sources */,
 				EC9750B62293443600CC391A /* UserController.swift in Sources */,
 				EC9750B42293439300CC391A /* User.swift in Sources */,
+				EC9750BA22934ADF00CC391A /* HomeScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

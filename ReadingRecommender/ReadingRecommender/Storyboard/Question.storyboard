@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Question View Controller-->
         <scene sceneID="2Ho-JC-hIZ">
             <objects>
-                <viewController id="aCH-kC-U7F" sceneMemberID="viewController">
+                <viewController id="aCH-kC-U7F" customClass="QuestionViewController" customModule="ReadingRecommender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WMs-Bz-sTM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,10 +52,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZr-KX-mlC">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
                                         <state key="normal" title="Previous"/>
+                                        <connections>
+                                            <action selector="previousButtonTapped:" destination="aCH-kC-U7F" eventType="touchUpInside" id="ZZ2-p0-FJK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcf-YM-3L5">
                                         <rect key="frame" x="211" y="0.0" width="187" height="30"/>
                                         <state key="normal" title="Next"/>
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="aCH-kC-U7F" eventType="touchUpInside" id="1n7-mv-uem"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -74,10 +80,37 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NZi-rH-yvq"/>
                     </view>
+                    <connections>
+                        <outlet property="answerFourButton" destination="wN3-4k-cd0" id="YZt-2N-YUv"/>
+                        <outlet property="answerOneButton" destination="FpC-T4-CQH" id="QR3-wo-Yqz"/>
+                        <outlet property="answerThreeButton" destination="lO3-Ff-5wa" id="Vqq-i8-s7r"/>
+                        <outlet property="answerTwoButton" destination="aLD-eO-K8X" id="qFJ-j4-dtb"/>
+                        <outlet property="nextButton" destination="Fcf-YM-3L5" id="IDp-eD-tMt"/>
+                        <outlet property="previousButton" destination="BZr-KX-mlC" id="QKx-lh-ODO"/>
+                        <outlet property="questionTextLabel" destination="iJf-o9-luX" id="a7Y-Lb-hwx"/>
+                        <segue destination="O3z-LN-VaJ" kind="presentation" identifier="NextQuestion" id="gcm-P7-RNX"/>
+                        <segue destination="Cqb-pl-c1P" kind="show" identifier="ShowBook" id="Jpa-Ny-I6S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35m-UT-F3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="260.86956521739131" y="186.83035714285714"/>
+        </scene>
+        <!--Question-->
+        <scene sceneID="aET-Jy-lTS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Question" id="O3z-LN-VaJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0YM-Ro-qlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="870" y="2"/>
+        </scene>
+        <!--Book-->
+        <scene sceneID="PR5-9G-T3y">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Book" id="Cqb-pl-c1P" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4yy-jG-Ftj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="853" y="290"/>
         </scene>
     </scenes>
 </document>
