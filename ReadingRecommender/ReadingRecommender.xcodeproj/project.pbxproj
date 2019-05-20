@@ -15,6 +15,8 @@
 		EC9750B0229335F600CC391A /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9750AF229335F600CC391A /* Question.storyboard */; };
 		EC9750B222933FA500CC391A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9750B122933FA500CC391A /* Question.swift */; };
 		EC9750B42293439300CC391A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9750B32293439300CC391A /* User.swift */; };
+		EC9750B62293443600CC391A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9750B52293443600CC391A /* UserController.swift */; };
+		EC9750B8229344A600CC391A /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9750B7229344A600CC391A /* QuestionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,12 +26,13 @@
 		EC97509922931AF300CC391A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC97509C22931AF300CC391A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC97509E22931AF300CC391A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC9750AB22931F9700CC391A /* DummyText.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = DummyText.rtf; sourceTree = "<group>"; };
 		EC9750AC22931F9900CC391A /* DummyText.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = DummyText.rtf; sourceTree = "<group>"; };
 		EC9750AD2293322B00CC391A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		EC9750AF229335F600CC391A /* Question.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
 		EC9750B122933FA500CC391A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		EC9750B32293439300CC391A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EC9750B52293443600CC391A /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		EC9750B7229344A600CC391A /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +106,8 @@
 		EC9750A722931D3C00CC391A /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EC9750AB22931F9700CC391A /* DummyText.rtf */,
+				EC9750B52293443600CC391A /* UserController.swift */,
+				EC9750B7229344A600CC391A /* QuestionController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -190,8 +194,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9750B8229344A600CC391A /* QuestionController.swift in Sources */,
 				EC97509322931AEF00CC391A /* AppDelegate.swift in Sources */,
 				EC9750B222933FA500CC391A /* Question.swift in Sources */,
+				EC9750B62293443600CC391A /* UserController.swift in Sources */,
 				EC9750B42293439300CC391A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
