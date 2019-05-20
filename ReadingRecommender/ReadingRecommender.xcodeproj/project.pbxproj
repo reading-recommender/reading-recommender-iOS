@@ -11,9 +11,9 @@
 		EC97509822931AEF00CC391A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC97509622931AEF00CC391A /* Main.storyboard */; };
 		EC97509A22931AF300CC391A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC97509922931AF300CC391A /* Assets.xcassets */; };
 		EC97509D22931AF300CC391A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC97509B22931AF300CC391A /* LaunchScreen.storyboard */; };
-		EC9750AA22931F8100CC391A /* DummyText.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EC9750A922931F8100CC391A /* DummyText.rtf */; };
 		EC9750AE2293322B00CC391A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9750AD2293322B00CC391A /* Login.storyboard */; };
 		EC9750B0229335F600CC391A /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9750AF229335F600CC391A /* Question.storyboard */; };
+		EC9750B222933FA500CC391A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9750B122933FA500CC391A /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +23,11 @@
 		EC97509922931AF300CC391A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC97509C22931AF300CC391A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC97509E22931AF300CC391A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC9750A922931F8100CC391A /* DummyText.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = DummyText.rtf; sourceTree = "<group>"; };
 		EC9750AB22931F9700CC391A /* DummyText.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = DummyText.rtf; sourceTree = "<group>"; };
 		EC9750AC22931F9900CC391A /* DummyText.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = DummyText.rtf; sourceTree = "<group>"; };
 		EC9750AD2293322B00CC391A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		EC9750AF229335F600CC391A /* Question.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
+		EC9750B122933FA500CC391A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 		EC9750A822931D4800CC391A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EC9750A922931F8100CC391A /* DummyText.rtf */,
+				EC9750B122933FA500CC391A /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,7 +172,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC9750AA22931F8100CC391A /* DummyText.rtf in Resources */,
 				EC97509D22931AF300CC391A /* LaunchScreen.storyboard in Resources */,
 				EC9750B0229335F600CC391A /* Question.storyboard in Resources */,
 				EC97509A22931AF300CC391A /* Assets.xcassets in Resources */,
@@ -189,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC97509322931AEF00CC391A /* AppDelegate.swift in Sources */,
+				EC9750B222933FA500CC391A /* Question.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
