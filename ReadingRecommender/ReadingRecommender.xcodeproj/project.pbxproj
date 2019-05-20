@@ -13,6 +13,7 @@
 		EC97509D22931AF300CC391A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC97509B22931AF300CC391A /* LaunchScreen.storyboard */; };
 		EC9750AA22931F8100CC391A /* DummyText.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EC9750A922931F8100CC391A /* DummyText.rtf */; };
 		EC9750AE2293322B00CC391A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9750AD2293322B00CC391A /* Login.storyboard */; };
+		EC9750B0229335F600CC391A /* Question.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9750AF229335F600CC391A /* Question.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		EC9750AB22931F9700CC391A /* DummyText.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = DummyText.rtf; sourceTree = "<group>"; };
 		EC9750AC22931F9900CC391A /* DummyText.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = DummyText.rtf; sourceTree = "<group>"; };
 		EC9750AD2293322B00CC391A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		EC9750AF229335F600CC391A /* Question.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Question.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				EC97509622931AEF00CC391A /* Main.storyboard */,
 				EC97509B22931AF300CC391A /* LaunchScreen.storyboard */,
 				EC9750AD2293322B00CC391A /* Login.storyboard */,
+				EC9750AF229335F600CC391A /* Question.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			files = (
 				EC9750AA22931F8100CC391A /* DummyText.rtf in Resources */,
 				EC97509D22931AF300CC391A /* LaunchScreen.storyboard in Resources */,
+				EC9750B0229335F600CC391A /* Question.storyboard in Resources */,
 				EC97509A22931AF300CC391A /* Assets.xcassets in Resources */,
 				EC9750AE2293322B00CC391A /* Login.storyboard in Resources */,
 				EC97509822931AEF00CC391A /* Main.storyboard in Resources */,
