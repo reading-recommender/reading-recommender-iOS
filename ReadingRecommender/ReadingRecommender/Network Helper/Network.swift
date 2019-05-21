@@ -10,6 +10,7 @@ import Foundation
 
 enum HTTPMethod: String {
     case get = "GET"
+    case post = "POST"
 }
 
 enum NetworkError: Error {
@@ -21,10 +22,11 @@ enum NetworkError: Error {
 
 class Network {
     var questions: [Question] = []
-    private let baseURL = URL(string: "https://reading-recommender.firebaseio.com/")!
+    private let questionBaseURL = URL(string: "https://reading-recommender.firebaseio.com/")!
+    private let baseURL = URL(string: "https://reading-recommender.herokuapp.com/")!
     
     func getQuestions(completion: @escaping (Result<Question, NetworkError>) -> Void) {
-        let url = baseURL.appendingPathExtension("json")
+        let url = questionBaseURL.appendingPathExtension("json")
         
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.get.rawValue
@@ -62,6 +64,38 @@ class Network {
             }
         }.resume()
         
+    }
+    
+    func signUp(for user: User, completion: @escaping (Error?) -> Void) {
+        let url = baseURL.appendingPathComponent("api/signup")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let encoder = JSONEncoder()
+        do {
+            request.httpBody = try encoder.encode(user)
+        } catch{
+            NSLog("Error encoding user: \(error)")
+            completion(error)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (_, response, error) in
+            if let respons = response as? HTTPURLResponse, respons.statusCode != 201 {
+                completion(NSError(domain: "", code: respons.statusCode, userInfo:nil))
+                return
+            }
+            
+            if let error = error {
+                completion(error)
+                return
+            }
+            
+            completion(nil)
+                
+        }.resume()
     }
     
 }

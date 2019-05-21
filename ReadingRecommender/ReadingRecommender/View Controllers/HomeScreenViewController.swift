@@ -11,15 +11,19 @@ import UIKit
 class HomeScreenViewController: UIViewController {
     
     let questionController = QuestionControler()
-    let userController = UserController()
+    var userController: UserController?
 
     @IBOutlet weak var usernameTextField: UILabel!
     @IBOutlet weak var takeTestButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.hidesBackButton = true
 
-        usernameTextField.text = userController.testUser.username
+        guard let user = userController?.user else { return }
+        
+        usernameTextField.text = user.username
         
         Appearance.styleNavigation(button: takeTestButton)
     }

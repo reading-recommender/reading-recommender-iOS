@@ -26,22 +26,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zHx-we-5gk">
-                                <rect key="frame" x="103.5" y="189.5" width="207" height="168"/>
+                                <rect key="frame" x="52" y="189.5" width="310.5" height="168"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpC-T4-CQH">
-                                        <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="310.5" height="30"/>
                                         <state key="normal" title="Answer 1"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLD-eO-K8X">
-                                        <rect key="frame" x="0.0" y="46" width="207" height="30"/>
+                                        <rect key="frame" x="0.0" y="46" width="310.5" height="30"/>
                                         <state key="normal" title="Answer 2"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lO3-Ff-5wa">
-                                        <rect key="frame" x="0.0" y="92" width="207" height="30"/>
+                                        <rect key="frame" x="0.0" y="92" width="310.5" height="30"/>
                                         <state key="normal" title="Answer 3"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wN3-4k-cd0">
-                                        <rect key="frame" x="0.0" y="138" width="207" height="30"/>
+                                        <rect key="frame" x="0.0" y="138" width="310.5" height="30"/>
                                         <state key="normal" title="Answer 4"/>
                                     </button>
                                 </subviews>
@@ -72,7 +72,7 @@
                             <constraint firstItem="OqJ-KK-7pw" firstAttribute="leading" secondItem="NZi-rH-yvq" secondAttribute="leading" constant="8" id="HfY-co-x6z"/>
                             <constraint firstItem="NZi-rH-yvq" firstAttribute="trailing" secondItem="OqJ-KK-7pw" secondAttribute="trailing" constant="8" id="NZF-zz-cfE"/>
                             <constraint firstItem="OqJ-KK-7pw" firstAttribute="top" secondItem="zHx-we-5gk" secondAttribute="bottom" constant="24" id="drJ-EV-oY3"/>
-                            <constraint firstItem="zHx-we-5gk" firstAttribute="width" secondItem="WMs-Bz-sTM" secondAttribute="width" multiplier="0.5" id="h07-aA-E21"/>
+                            <constraint firstItem="zHx-we-5gk" firstAttribute="width" secondItem="WMs-Bz-sTM" secondAttribute="width" multiplier="0.75" id="h07-aA-E21"/>
                             <constraint firstItem="zHx-we-5gk" firstAttribute="centerX" secondItem="WMs-Bz-sTM" secondAttribute="centerX" id="sMC-ew-WGx"/>
                             <constraint firstItem="iJf-o9-luX" firstAttribute="leading" secondItem="NZi-rH-yvq" secondAttribute="leading" constant="8" id="vZH-yy-tvH"/>
                             <constraint firstItem="zHx-we-5gk" firstAttribute="top" secondItem="iJf-o9-luX" secondAttribute="bottom" constant="24" id="wk6-XC-js2"/>

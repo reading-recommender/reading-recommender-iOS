@@ -11,5 +11,11 @@ import Foundation
 struct User: Equatable, Codable {
     let username: String
     let password: String
-    let token: String   
+    var token: String?
+    
+    init(username: String, password: String, token: String? = nil) {
+        self.username = username
+        self.password = password
+        self.token = token
+    }
 }

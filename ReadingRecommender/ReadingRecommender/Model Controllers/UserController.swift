@@ -9,5 +9,15 @@
 import Foundation
 
 class UserController {
-    let testUser = User(username: "christopher", password: "test", token: "N/A")
+    var user: User?
+    
+    func createGuest() {
+        user = User(username: "guest", password: "guest")
+    }
+    
+    func createUser(username: String, password: String) {
+        user = User(username: username, password: password)
+    }
+    
+    
 }
