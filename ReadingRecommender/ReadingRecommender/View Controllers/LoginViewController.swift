@@ -46,6 +46,11 @@ class LoginViewController: UIViewController {
         
         networkControll.Login(for: userController.user) { (error) in
             if let error = error {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Error", message: "There was an issue loging in. Please Try again.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                }
                 NSLog("\(error)")
                 return
             }
