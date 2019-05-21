@@ -10,26 +10,42 @@ import UIKit
 
 class SingUpViewController: UIViewController {
 
+    let userController = UserController()
+    let network = Network()
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func signUpButtonTapped(_ sender: Any) {
+        guard let username = usernameTextField.text,
+        let password = passwordTextField.text
+        else {
+                let alert = UIAlertController(title: "Missing Info", message: "Please enter both a username and a password", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                present(alert, animated: true)
+                return
+        }
+        
+        userController.createUser(username: username, password: password)
+        guard let user = userController.user else { return }
+        
+        network.signUp(for: user) { (error) in
+            
+            if let error = error {
+                NSLog("\(error)")
+                return
+            } else {
+                DispatchQueue.main.sync {
+                    let alert = UIAlertController(title: "Success", message: "Sign Up was successful. Please login now", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {action in self.dismiss(animated: true, completion: nil) }))
+                    self.present(alert, animated: true)
+                }
+            }
+        }
         
     }
 }
