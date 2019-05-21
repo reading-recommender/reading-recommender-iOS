@@ -20,13 +20,16 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.hidesBackButton = true
 
         guard let user = userController?.user else { return }
         
         usernameTextField.text = user.username
         
         Appearance.styleNavigation(button: takeTestButton)
+    }
+    
+    @IBAction func signOutButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func myUnwindAction(segue: UIStoryboardSegue) {
