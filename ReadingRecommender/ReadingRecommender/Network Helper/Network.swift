@@ -23,7 +23,7 @@ class Network {
     var questions: [Question] = []
     private let baseURL = URL(string: "https://reading-recommender.firebaseio.com/")!
     
-    func getQuestions(completion: @escaping (Result<[Question], NetworkError>) -> Void) {
+    func getQuestions(completion: @escaping (Result<Question, NetworkError>) -> Void) {
         let url = baseURL.appendingPathExtension("json")
         
         var request = URLRequest(url: url)
@@ -48,10 +48,13 @@ class Network {
                 return
             }
             
+//            let question = try? newJSONDecoder().decode(Question.self, from: jsonData)
+
+            
             let decoder = JSONDecoder()
             do {
-                self.questions = try decoder.decode([Question].self, from: data)
-                completion(.success(self.questions))
+                let questions = try decoder.decode(Question.self, from: data)
+                completion(.success(questions))
             } catch {
                 NSLog("Could not decode data")
                 completion(.failure(.badData))

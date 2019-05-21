@@ -8,9 +8,17 @@
 
 import Foundation
 
+// MARK: - Question
 struct Question: Codable {
-    let question: String
+    let question1, question10, question2, question3: [Question1Element]
+    let question4, question5, question6, question7: [Question1Element]
+    let question8, question9: [Question1Element]
+}
+
+// MARK: - Question1Element
+struct Question1Element: Codable {
     let answers: [Answer]
+    let question: String
 }
 
 // MARK: - Answer

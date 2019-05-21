@@ -48,17 +48,84 @@ class QuestionViewController: UIViewController {
             return
         }
         
-        guard let question = questionController?.questions[questionIndex] else {
+        guard let question = questionController?.questions else {
             NSLog("Couldn't load question")
             return
         }
         
         
-        questionTextLabel.text = question.question
-        answerOneButton.setTitle(question.answers[0].answer1, for: .normal)
-        answerTwoButton.setTitle(question.answers[0].answer2, for: .normal)
-        answerThreeButton.setTitle(question.answers[0].answer3, for: .normal)
-        answerFourButton.setTitle(question.answers[0].answer4, for: .normal)
+//        questionTextLabel.text = question.question
+//        answerOneButton.setTitle(question.answers[0].answer1, for: .normal)
+//        answerTwoButton.setTitle(question.answers[0].answer2, for: .normal)
+//        answerThreeButton.setTitle(question.answers[0].answer3, for: .normal)
+//        answerFourButton.setTitle(question.answers[0].answer4, for: .normal)
+        
+        switch questionIndex {
+        case 0:
+            questionTextLabel.text = question.question1[0].question
+            answerOneButton.setTitle(question.question1[0].answers[0].answer1, for: .normal)
+            answerTwoButton.setTitle(question.question1[0].answers[0].answer2, for: .normal)
+            answerThreeButton.setTitle(question.question1[0].answers[0].answer3, for: .normal)
+            answerFourButton.setTitle(question.question1[0].answers[0].answer4, for: .normal)
+        case 1:
+            questionTextLabel.text = question.question2[0].question
+            answerOneButton.setTitle(question.question2[0].answers[0].answer1, for: .normal)
+            answerTwoButton.setTitle(question.question2[0].answers[0].answer2, for: .normal)
+            answerThreeButton.setTitle(question.question2[0].answers[0].answer3, for: .normal)
+            answerFourButton.setTitle(question.question2[0].answers[0].answer4, for: .normal)
+        case 2:
+            questionTextLabel.text = question.question3[0].question
+            answerOneButton.setTitle(question.question3[0].answers[0].answer1, for: .normal)
+            answerTwoButton.setTitle(question.question3[0].answers[0].answer2, for: .normal)
+            answerThreeButton.setTitle(question.question3[0].answers[0].answer3, for: .normal)
+            answerFourButton.setTitle(question.question3[0].answers[0].answer4, for: .normal)
+        case 3:
+            questionTextLabel.text = question.question4[0].question
+            answerOneButton.setTitle(question.question4[0].answers[0].answer1, for: .normal)
+            answerTwoButton.setTitle(question.question4[0].answers[0].answer2, for: .normal)
+            answerThreeButton.setTitle(question.question4[0].answers[0].answer3, for: .normal)
+            answerFourButton.setTitle(question.question4[0].answers[0].answer4, for: .normal)
+        case 4:
+            questionTextLabel.text = question.question5[0].question
+            answerOneButton.setTitle(question.question5[0].answers[0].answer1, for: .normal)
+            answerTwoButton.setTitle(question.question5[0].answers[0].answer2, for: .normal)
+            answerThreeButton.setTitle(question.question5[0].answers[0].answer3, for: .normal)
+            answerFourButton.setTitle(question.question5[0].answers[0].answer4, for: .normal)
+        case 5:
+            questionTextLabel.text = question.question6[0].question
+            answerOneButton.setTitle(question.question6[0].answers[0].answer1, for: .normal)
+            answerTwoButton.setTitle(question.question6[0].answers[0].answer2, for: .normal)
+            answerThreeButton.setTitle(question.question6[0].answers[0].answer3, for: .normal)
+            answerFourButton.setTitle(question.question6[0].answers[0].answer4, for: .normal)
+        case 6:
+            questionTextLabel.text = question.question7[0].question
+            answerOneButton.setTitle(question.question7[0].answers[0].answer1, for: .normal)
+            answerTwoButton.setTitle(question.question7[0].answers[0].answer2, for: .normal)
+            answerThreeButton.setTitle(question.question7[0].answers[0].answer3, for: .normal)
+            answerFourButton.setTitle(question.question7[0].answers[0].answer4, for: .normal)
+        case 7:
+            questionTextLabel.text = question.question8[0].question
+            answerOneButton.setTitle(question.question8[0].answers[0].answer1, for: .normal)
+            answerTwoButton.setTitle(question.question8[0].answers[0].answer2, for: .normal)
+            answerThreeButton.setTitle(question.question8[0].answers[0].answer3, for: .normal)
+            answerFourButton.setTitle(question.question8[0].answers[0].answer4, for: .normal)
+        case 8:
+            questionTextLabel.text = question.question9[0].question
+            answerOneButton.setTitle(question.question9[0].answers[0].answer1, for: .normal)
+            answerTwoButton.setTitle(question.question9[0].answers[0].answer2, for: .normal)
+            answerThreeButton.setTitle(question.question9[0].answers[0].answer3, for: .normal)
+            answerFourButton.setTitle(question.question9[0].answers[0].answer4, for: .normal)
+        case 9:
+            questionTextLabel.text = question.question10[0].question
+            answerOneButton.setTitle(question.question10[0].answers[0].answer1, for: .normal)
+            answerTwoButton.setTitle(question.question10[0].answers[0].answer2, for: .normal)
+            answerThreeButton.setTitle(question.question10[0].answers[0].answer3, for: .normal)
+            answerFourButton.setTitle(question.question10[0].answers[0].answer4, for: .normal)
+        default:
+            let alert = UIAlertController(title: "Issue", message: "There was an issue forming the question", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alert, animated: true)
+        }
         
     }
     
@@ -74,9 +141,9 @@ class QuestionViewController: UIViewController {
     }
     
     private func nextButtonSetUp() {
-        guard let questionController = questionController else { return }
+//        guard let questionController = questionController else { return }
         
-        if let currentQuestion = currentQuestion, currentQuestion == questionController.questions.count - 1 {
+        if let currentQuestion = currentQuestion, currentQuestion == 9 {
             nextButton.setTitle("Finish", for: .normal)
             shouldFinish = true
         } else {
