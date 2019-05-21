@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC4A379D2293643900FE658F /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC4A379C2293643900FE658F /* Pacifico-Regular.ttf */; };
 		EC4A379F229368D100FE658F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A379E229368D100FE658F /* Book.swift */; };
 		EC4A37A12293690B00FE658F /* BookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A37A02293690B00FE658F /* BookController.swift */; };
 		EC4A37A322936A3100FE658F /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A37A222936A3100FE658F /* BookViewController.swift */; };
@@ -28,7 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC4A379C2293643900FE658F /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		EC4A379E229368D100FE658F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		EC4A37A02293690B00FE658F /* BookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookController.swift; sourceTree = "<group>"; };
 		EC4A37A222936A3100FE658F /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 				EC97509222931AEF00CC391A /* AppDelegate.swift */,
 				EC97509922931AF300CC391A /* Assets.xcassets */,
 				EC97509E22931AF300CC391A /* Info.plist */,
-				EC4A379C2293643900FE658F /* Pacifico-Regular.ttf */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -212,7 +209,6 @@
 				EC97509D22931AF300CC391A /* LaunchScreen.storyboard in Resources */,
 				EC9750BE22935B4000CC391A /* Book.storyboard in Resources */,
 				EC9750B0229335F600CC391A /* Question.storyboard in Resources */,
-				EC4A379D2293643900FE658F /* Pacifico-Regular.ttf in Resources */,
 				EC97509A22931AF300CC391A /* Assets.xcassets in Resources */,
 				EC9750AE2293322B00CC391A /* Login.storyboard in Resources */,
 				EC97509822931AEF00CC391A /* Main.storyboard in Resources */,

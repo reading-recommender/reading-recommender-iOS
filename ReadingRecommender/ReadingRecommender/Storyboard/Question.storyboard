@@ -49,18 +49,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="OqJ-KK-7pw">
                                 <rect key="frame" x="8" y="381.5" width="398" height="84"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZr-KX-mlC">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
-                                        <state key="normal" title="Previous"/>
-                                        <connections>
-                                            <action selector="previousButtonTapped:" destination="aCH-kC-U7F" eventType="touchUpInside" id="ZZ2-p0-FJK"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcf-YM-3L5">
-                                        <rect key="frame" x="0.0" y="54" width="398" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
                                             <action selector="nextButtonTapped:" destination="aCH-kC-U7F" eventType="touchUpInside" id="1n7-mv-uem"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZr-KX-mlC">
+                                        <rect key="frame" x="0.0" y="54" width="398" height="30"/>
+                                        <state key="normal" title="Previous"/>
+                                        <connections>
+                                            <action selector="previousButtonTapped:" destination="aCH-kC-U7F" eventType="touchUpInside" id="ZZ2-p0-FJK"/>
                                         </connections>
                                     </button>
                                 </subviews>

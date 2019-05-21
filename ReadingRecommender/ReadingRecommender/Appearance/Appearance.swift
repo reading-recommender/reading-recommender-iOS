@@ -22,12 +22,14 @@ enum Appearance {
         button.layer.cornerRadius = 8
         button.layer.borderWidth = 1
         button.setTitleColor(secondaryColor, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 24, weight: .regular)
     }
     
     static func styleNavigation(button: UIButton) {
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = navButtonBackgroud
         button.layer.cornerRadius = 8
+        button.titleLabel?.font = .systemFont(ofSize: 24, weight: .regular)
     }
     
 }

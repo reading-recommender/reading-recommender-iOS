@@ -19,16 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QHI-AG-KSs">
-                                <rect key="frame" x="8" y="84" width="398" height="49"/>
+                                <rect key="frame" x="8" y="84" width="398" height="64.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xki-ho-UeF">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="af8-CN-pNJ">
-                                        <rect key="frame" x="0.0" y="28.5" width="398" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="44" width="398" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5W-3t-IOL">
-                                <rect key="frame" x="188.5" y="141" width="37" height="30"/>
+                                <rect key="frame" x="138.5" y="156.5" width="137" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="doneButtonTapped:" destination="pID-sO-PxS" eventType="touchUpInside" id="U72-Kp-Upe"/>
@@ -47,6 +47,7 @@
                         <constraints>
                             <constraint firstItem="9Ng-uj-yPL" firstAttribute="trailing" secondItem="QHI-AG-KSs" secondAttribute="trailing" constant="8" id="6ij-VY-K2O"/>
                             <constraint firstItem="Q5W-3t-IOL" firstAttribute="top" secondItem="QHI-AG-KSs" secondAttribute="bottom" constant="8" id="I2v-Dt-G9v"/>
+                            <constraint firstItem="Q5W-3t-IOL" firstAttribute="width" secondItem="GSj-us-oeC" secondAttribute="width" multiplier="0.33" id="nNG-9b-Edz"/>
                             <constraint firstItem="QHI-AG-KSs" firstAttribute="top" secondItem="9Ng-uj-yPL" secondAttribute="top" constant="40" id="sPo-TA-9hh"/>
                             <constraint firstItem="Q5W-3t-IOL" firstAttribute="centerX" secondItem="GSj-us-oeC" secondAttribute="centerX" id="vJt-1s-ZRY"/>
                             <constraint firstItem="QHI-AG-KSs" firstAttribute="leading" secondItem="9Ng-uj-yPL" secondAttribute="leading" constant="8" id="vta-Ol-Ukk"/>
@@ -55,6 +56,7 @@
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="af8-CN-pNJ" id="Mie-zT-2Bd"/>
+                        <outlet property="doneButton" destination="Q5W-3t-IOL" id="iZH-n9-Ica"/>
                         <outlet property="titleLabel" destination="Xki-ho-UeF" id="H9z-O0-oQg"/>
                         <segue destination="M8a-kG-i90" kind="unwind" identifier="unwindToHome" unwindAction="myUnwindActionWithSegue:" id="8P9-WE-4lD"/>
                     </connections>

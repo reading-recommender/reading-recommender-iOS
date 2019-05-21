@@ -14,11 +14,13 @@ class BookViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         updateView()
+        styleDoneButton()
     }
     
     private func updateView() {
@@ -26,6 +28,9 @@ class BookViewController: UIViewController {
         descriptionLabel.text = bookController.books.description
     }
     
+    private func styleDoneButton() {
+        Appearance.styleNavigation(button: doneButton)
+    }
 
     @IBAction func doneButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "unwindToHome", sender: nil)
