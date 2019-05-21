@@ -41,13 +41,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
-            performSegue(withIdentifier: "login", sender: nil)
+            loginButtonTapped(view!)
         }
         
         return true
     }
-    
-
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
