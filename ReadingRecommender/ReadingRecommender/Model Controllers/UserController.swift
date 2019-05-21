@@ -9,11 +9,7 @@
 import Foundation
 
 class UserController {
-    var user: User?
-    
-    func createGuest() {
-        user = User(username: "guest", password: "guest")
-    }
+    var user = User()
     
     func createUser(username: String, password: String) {
         user = User(username: username, password: password)

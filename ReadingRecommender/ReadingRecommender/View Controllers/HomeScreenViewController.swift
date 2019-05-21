@@ -12,6 +12,7 @@ class HomeScreenViewController: UIViewController {
     
     let questionController = QuestionControler()
     var userController: UserController?
+    var networkController: Network?
 
     @IBOutlet weak var usernameTextField: UILabel!
     @IBOutlet weak var takeTestButton: UIButton!

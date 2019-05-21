@@ -10,7 +10,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     let userController = UserController()
-
+    let networkControll = Network()
+    
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -28,18 +29,39 @@ class LoginViewController: UIViewController {
             let destination = segue.destination as! HomeScreenViewController
             
             destination.userController = userController
+        } else if segue.identifier == "login" {
+            let destination = segue.destination as! HomeScreenViewController
+            
+            destination.userController = userController
+            destination.networkController = networkControll
         }
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
+        guard let username = userNameTextField.text,
+        let password = passwordTextField.text
+        else { return }
+        
+        userController.createUser(username: username, password: password)
+        
+        networkControll.Login(for: userController.user) { (error) in
+            if let error = error {
+                NSLog("\(error)")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "login", sender: nil)
+            }
+        }
+        
+        
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
-        userController.createGuest()
-        
         performSegue(withIdentifier: "ContinueAsGuest", sender: sender)
     }
     

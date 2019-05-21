@@ -26,6 +26,7 @@
 		EC9750BE22935B4000CC391A /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9750BD22935B4000CC391A /* Book.storyboard */; };
 		ECFD2DD52294738C005D1620 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD2DD42294738C005D1620 /* LoginViewController.swift */; };
 		ECFD2DD722947E07005D1620 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD2DD622947E07005D1620 /* SingUpViewController.swift */; };
+		ECFD2DD922949FF8005D1620 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD2DD822949FF8005D1620 /* Token.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		EC9750BD22935B4000CC391A /* Book.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
 		ECFD2DD42294738C005D1620 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "ReadingRecommender/View Controllers/LoginViewController.swift"; sourceTree = SOURCE_ROOT; };
 		ECFD2DD622947E07005D1620 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
+		ECFD2DD822949FF8005D1620 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				EC9750B122933FA500CC391A /* Question.swift */,
 				EC9750B32293439300CC391A /* User.swift */,
 				EC4A379E229368D100FE658F /* Book.swift */,
+				ECFD2DD822949FF8005D1620 /* Token.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				EC9750B8229344A600CC391A /* QuestionController.swift in Sources */,
 				EC97509322931AEF00CC391A /* AppDelegate.swift in Sources */,
 				EC9750BC22934CC900CC391A /* QuestionViewController.swift in Sources */,
+				ECFD2DD922949FF8005D1620 /* Token.swift in Sources */,
 				EC9750B222933FA500CC391A /* Question.swift in Sources */,
 				EC9750B62293443600CC391A /* UserController.swift in Sources */,
 				ECFD2DD722947E07005D1620 /* SingUpViewController.swift in Sources */,

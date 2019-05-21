@@ -11,11 +11,9 @@ import Foundation
 struct User: Equatable, Codable {
     let username: String
     let password: String
-    var token: String?
     
-    init(username: String, password: String, token: String? = nil) {
+    init(username: String = "guest", password: String = "guest") {
         self.username = username
         self.password = password
-        self.token = token
     }
 }

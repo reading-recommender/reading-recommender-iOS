@@ -70,7 +70,7 @@ get you next reading recommendation?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1829" y="129"/>
+            <point key="canvasLocation" x="2023" y="430"/>
         </scene>
         <!--Login-->
         <scene sceneID="fAb-jv-BKH">
@@ -158,6 +158,7 @@ get you next reading recommendation?</string>
                         <outlet property="signUpButton" destination="lRt-eu-cFX" id="kai-GL-mMH"/>
                         <outlet property="userNameTextField" destination="LgX-rR-mB2" id="N4m-Ma-3iS"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="ContinueAsGuest" id="5DQ-8y-FsA"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="login" id="kFU-V7-TbT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hmq-h1-d2T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -271,4 +272,7 @@ get you next reading recommendation?</string>
             <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kFU-V7-TbT"/>
+    </inferredMetricsTieBreakers>
 </document>

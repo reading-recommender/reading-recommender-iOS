@@ -31,7 +31,7 @@ class SingUpViewController: UIViewController {
         }
         
         userController.createUser(username: username, password: password)
-        guard let user = userController.user else { return }
+        let user = userController.user
         
         network.signUp(for: user) { (error) in
             
