@@ -14,11 +14,14 @@ class HomeScreenViewController: UIViewController {
     let userController = UserController()
 
     @IBOutlet weak var usernameTextField: UILabel!
+    @IBOutlet weak var takeTestButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         usernameTextField.text = userController.testUser.username
+        
+        Appearance.styleNavigation(button: takeTestButton)
     }
     
     @IBAction func myUnwindAction(segue: UIStoryboardSegue) {
@@ -35,6 +38,7 @@ class HomeScreenViewController: UIViewController {
             }
             
             destination.currentQuestion = 0
+            destination.numberOfAnsweredQuestions = 0
             destination.questionController = questionController
         }
     }

@@ -10,6 +10,7 @@ import Foundation
 
 class QuestionControler {
     var questions: [Question] = []
+    var listOfAnswers: [String] = []
     
     init() {
         questions.append(Question(question: "What Color is the sky", answers: [Answer(answer1: "Black", answer2: "Green", answer3: "Blue", answer4: "Pink")]))
@@ -22,5 +23,9 @@ class QuestionControler {
         questions.append(Question(question: "What color is grass?", answers: [Answer(answer1: "Purple", answer2: "Green", answer3: "Orange", answer4: "Brown")]))
         questions.append(Question(question: "Live long and ", answers: [Answer(answer1: "Prosper", answer2: "Die", answer3: "Let Live", answer4: "You're a nerd")]))
         questions.append(Question(question: "How do you feel?", answers: [Answer(answer1: "😁", answer2: "🙂", answer3: "🙁", answer4: "🤯")]))
+        
+        for _ in 0..<questions.count {
+            listOfAnswers.append("")
+        }
     }
 }

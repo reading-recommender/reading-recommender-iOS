@@ -25,39 +25,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zHx-we-5gk">
-                                <rect key="frame" x="8" y="189.5" width="398" height="168"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zHx-we-5gk">
+                                <rect key="frame" x="103.5" y="189.5" width="207" height="168"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpC-T4-CQH">
-                                        <rect key="frame" x="168" y="0.0" width="62" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
                                         <state key="normal" title="Answer 1"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLD-eO-K8X">
-                                        <rect key="frame" x="167" y="46" width="64" height="30"/>
+                                        <rect key="frame" x="0.0" y="46" width="207" height="30"/>
                                         <state key="normal" title="Answer 2"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lO3-Ff-5wa">
-                                        <rect key="frame" x="167" y="92" width="64" height="30"/>
+                                        <rect key="frame" x="0.0" y="92" width="207" height="30"/>
                                         <state key="normal" title="Answer 3"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wN3-4k-cd0">
-                                        <rect key="frame" x="166.5" y="138" width="65" height="30"/>
+                                        <rect key="frame" x="0.0" y="138" width="207" height="30"/>
                                         <state key="normal" title="Answer 4"/>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="OqJ-KK-7pw">
-                                <rect key="frame" x="8" y="381.5" width="398" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="OqJ-KK-7pw">
+                                <rect key="frame" x="8" y="381.5" width="398" height="84"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZr-KX-mlC">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZr-KX-mlC">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
                                         <state key="normal" title="Previous"/>
                                         <connections>
                                             <action selector="previousButtonTapped:" destination="aCH-kC-U7F" eventType="touchUpInside" id="ZZ2-p0-FJK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcf-YM-3L5">
-                                        <rect key="frame" x="211" y="0.0" width="187" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcf-YM-3L5">
+                                        <rect key="frame" x="0.0" y="54" width="398" height="30"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
                                             <action selector="nextButtonTapped:" destination="aCH-kC-U7F" eventType="touchUpInside" id="1n7-mv-uem"/>
@@ -66,14 +66,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.84313725490196079" green="0.80784313725490198" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iJf-o9-luX" firstAttribute="top" secondItem="NZi-rH-yvq" secondAttribute="top" constant="40" id="2Oq-Lo-fj7"/>
-                            <constraint firstItem="NZi-rH-yvq" firstAttribute="trailing" secondItem="zHx-we-5gk" secondAttribute="trailing" constant="8" id="E8p-Jc-wnf"/>
                             <constraint firstItem="OqJ-KK-7pw" firstAttribute="leading" secondItem="NZi-rH-yvq" secondAttribute="leading" constant="8" id="HfY-co-x6z"/>
                             <constraint firstItem="NZi-rH-yvq" firstAttribute="trailing" secondItem="OqJ-KK-7pw" secondAttribute="trailing" constant="8" id="NZF-zz-cfE"/>
-                            <constraint firstItem="zHx-we-5gk" firstAttribute="leading" secondItem="NZi-rH-yvq" secondAttribute="leading" constant="8" id="ZqF-UL-Fcj"/>
                             <constraint firstItem="OqJ-KK-7pw" firstAttribute="top" secondItem="zHx-we-5gk" secondAttribute="bottom" constant="24" id="drJ-EV-oY3"/>
+                            <constraint firstItem="zHx-we-5gk" firstAttribute="width" secondItem="WMs-Bz-sTM" secondAttribute="width" multiplier="0.5" id="h07-aA-E21"/>
+                            <constraint firstItem="zHx-we-5gk" firstAttribute="centerX" secondItem="WMs-Bz-sTM" secondAttribute="centerX" id="sMC-ew-WGx"/>
                             <constraint firstItem="iJf-o9-luX" firstAttribute="leading" secondItem="NZi-rH-yvq" secondAttribute="leading" constant="8" id="vZH-yy-tvH"/>
                             <constraint firstItem="zHx-we-5gk" firstAttribute="top" secondItem="iJf-o9-luX" secondAttribute="bottom" constant="24" id="wk6-XC-js2"/>
                             <constraint firstItem="NZi-rH-yvq" firstAttribute="trailing" secondItem="iJf-o9-luX" secondAttribute="trailing" constant="8" id="zY6-HI-8O0"/>

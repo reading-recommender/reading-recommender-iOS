@@ -12,10 +12,14 @@ class QuestionViewController: UIViewController {
     // MARK: - Properties
     var currentQuestion: Int?
     var questionController: QuestionControler?
+    var numberOfAnsweredQuestions: Int?
+    
+
     
     // MARK: - Private Properties
     private var shouldCancel = false
     private var shouldFinish = false
+    private var itemSelected = false
 
     // MARK: - IBOutlets
     @IBOutlet weak var questionTextLabel: UILabel!
@@ -33,6 +37,8 @@ class QuestionViewController: UIViewController {
         updateView()
         previousButtonSetUp()
         nextButtonSetUp()
+        setButtons()
+        
     }
     
     private func updateView() {
@@ -62,7 +68,7 @@ class QuestionViewController: UIViewController {
             previousButton.setTitle("Cancel", for: .normal)
             shouldCancel = true
         } else {
-            previousButton.setTitle("Previou", for: .normal)
+            previousButton.setTitle("Previous", for: .normal)
             shouldCancel = false
         }
     }
@@ -78,6 +84,49 @@ class QuestionViewController: UIViewController {
             shouldFinish = false
         }
     }
+    
+    private func setButtons() {
+        Appearance.styleQuestion(button: answerOneButton)
+        Appearance.styleQuestion(button: answerTwoButton)
+        Appearance.styleQuestion(button: answerThreeButton)
+        Appearance.styleQuestion(button: answerFourButton)
+        
+        answerOneButton.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: .touchUpInside)
+        answerOneButton.tag = 1
+        answerTwoButton.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: .touchUpInside)
+        answerOneButton.tag = 2
+        answerThreeButton.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: .touchUpInside)
+        answerOneButton.tag = 3
+        answerFourButton.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: .touchUpInside)
+        answerOneButton.tag = 4
+        
+        Appearance.styleNavigation(button: previousButton)
+        Appearance.styleNavigation(button: nextButton)
+    }
+    
+    func clearButtons() {
+        Appearance.styleQuestion(button: answerOneButton)
+        Appearance.styleQuestion(button: answerTwoButton)
+        Appearance.styleQuestion(button: answerThreeButton)
+        Appearance.styleQuestion(button: answerFourButton)
+    }
+    
+    @objc func buttonClicked(sender: UIButton){
+        UIView.animate(withDuration: 1) {
+            self.clearButtons()
+            sender.setTitleColor(.white, for: .normal)
+            sender.layer.backgroundColor = Appearance.secondaryColor.cgColor
+            sender.layer.cornerRadius = 8
+        }
+        
+        guard let questionIndex = currentQuestion else { return }
+        guard let question = questionController else { return }
+        
+        question.listOfAnswers[questionIndex] = sender.titleLabel!.text!
+        
+        itemSelected = true
+
+    }
 
     @IBAction func previousButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -85,11 +134,18 @@ class QuestionViewController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         
-        if shouldFinish {
-            performSegue(withIdentifier: "ShowBook", sender: nil)
+        if !itemSelected {
+            let alert = UIAlertController(title: "Nothing Selected", message: "Please select an answer before continuing", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
         } else {
-            performSegue(withIdentifier: "NextQuestion", sender: nil)
+            if shouldFinish {
+                performSegue(withIdentifier: "ShowBook", sender: nil)
+            } else {
+                performSegue(withIdentifier: "NextQuestion", sender: nil)
+            }
         }
+        
     }
     
     

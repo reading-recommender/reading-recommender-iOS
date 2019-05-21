@@ -11,6 +11,7 @@
 		EC4A379F229368D100FE658F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A379E229368D100FE658F /* Book.swift */; };
 		EC4A37A12293690B00FE658F /* BookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A37A02293690B00FE658F /* BookController.swift */; };
 		EC4A37A322936A3100FE658F /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A37A222936A3100FE658F /* BookViewController.swift */; };
+		EC4A37A62293740800FE658F /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4A37A52293740800FE658F /* Appearance.swift */; };
 		EC97509322931AEF00CC391A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC97509222931AEF00CC391A /* AppDelegate.swift */; };
 		EC97509822931AEF00CC391A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC97509622931AEF00CC391A /* Main.storyboard */; };
 		EC97509A22931AF300CC391A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC97509922931AF300CC391A /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		EC4A379E229368D100FE658F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		EC4A37A02293690B00FE658F /* BookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookController.swift; sourceTree = "<group>"; };
 		EC4A37A222936A3100FE658F /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		EC4A37A52293740800FE658F /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		EC97508F22931AEF00CC391A /* ReadingRecommender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadingRecommender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC97509222931AEF00CC391A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC97509722931AEF00CC391A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC4A37A4229373E100FE658F /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				EC4A37A52293740800FE658F /* Appearance.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
 		EC97508622931AEF00CC391A = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 		EC97509122931AEF00CC391A /* ReadingRecommender */ = {
 			isa = PBXGroup;
 			children = (
+				EC4A37A4229373E100FE658F /* Appearance */,
 				EC9750A822931D4800CC391A /* Models */,
 				EC9750A722931D3C00CC391A /* Model Controllers */,
 				EC9750A622931CEF00CC391A /* View Controllers */,
@@ -222,6 +233,7 @@
 				EC9750BC22934CC900CC391A /* QuestionViewController.swift in Sources */,
 				EC9750B222933FA500CC391A /* Question.swift in Sources */,
 				EC9750B62293443600CC391A /* UserController.swift in Sources */,
+				EC4A37A62293740800FE658F /* Appearance.swift in Sources */,
 				EC4A37A322936A3100FE658F /* BookViewController.swift in Sources */,
 				EC9750B42293439300CC391A /* User.swift in Sources */,
 				EC9750BA22934ADF00CC391A /* HomeScreenViewController.swift in Sources */,
