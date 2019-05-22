@@ -149,7 +149,7 @@ get you next reading recommendation?</string>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="signUpButtonTapped:" destination="DOA-u0-XIM" eventType="touchUpInside" id="qGV-TH-EoN"/>
-                                                    <segue destination="kQg-f3-KrY" kind="show" identifier="PresentSignUp" id="11r-0G-Qa5"/>
+                                                    <segue destination="kQg-f3-KrY" kind="show" identifier="ShowSignUp" id="11r-0G-Qa5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWN-gC-fAZ">

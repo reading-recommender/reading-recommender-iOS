@@ -8,9 +8,11 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, UserInfoDelegate {
+
     let userController = UserController()
     let networkControll = Network()
+    
     
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -46,6 +48,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
+    
+    func setUserInfo(username: String, password: String) {
+        userNameTextField.text = username
+        passwordTextField.text = password
+    }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,6 +65,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             destination.userController = userController
             destination.networkController = networkControll
+        } else if segue.identifier == "ShowSignUp" {
+            let destination = segue.destination as! SingUpViewController
+            
+            destination.delegate = self
         }
     }
     
@@ -80,6 +91,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
             
             DispatchQueue.main.async {
+                self.userNameTextField.text = ""
+                self.passwordTextField.text = ""
                 self.performSegue(withIdentifier: "login", sender: nil)
             }
         }

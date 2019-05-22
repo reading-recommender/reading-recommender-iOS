@@ -13,6 +13,8 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
     let userController = UserController()
     let network = Network()
     
+    weak var delegate: UserInfoDelegate?
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -68,6 +70,7 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
                     let alert = UIAlertController(title: "Success", message: "Sign Up was successful. Please login now", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {action in
                         self.navigationController?.popViewController(animated: true)
+                        self.delegate?.setUserInfo(username: username, password: password)
                     }))
                     self.present(alert, animated: true)
                 }
@@ -75,4 +78,8 @@ class SingUpViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
+}
+
+protocol UserInfoDelegate: class {
+    func setUserInfo(username: String, password: String)
 }
