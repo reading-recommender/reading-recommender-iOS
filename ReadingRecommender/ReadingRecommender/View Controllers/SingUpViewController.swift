@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SingUpViewController: UIViewController {
+class SingUpViewController: UIViewController, UITextFieldDelegate {
 
     let userController = UserController()
     let network = Network()
@@ -18,6 +18,31 @@ class SingUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+        
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == usernameTextField {
+            textField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+            signUpButtonTapped(view!)
+        }
+        
+        return true
     }
 
     @IBAction func signUpButtonTapped(_ sender: Any) {
@@ -41,7 +66,9 @@ class SingUpViewController: UIViewController {
             } else {
                 DispatchQueue.main.sync {
                     let alert = UIAlertController(title: "Success", message: "Sign Up was successful. Please login now", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {action in self.dismiss(animated: true, completion: nil) }))
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {action in
+                        self.navigationController?.popViewController(animated: true)
+                    }))
                     self.present(alert, animated: true)
                 }
             }
