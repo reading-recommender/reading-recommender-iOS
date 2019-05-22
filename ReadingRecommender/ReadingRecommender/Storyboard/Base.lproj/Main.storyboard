@@ -441,11 +441,71 @@ get you next reading recommendation?</string>
                         <outlet property="nextButton" destination="jnq-lt-eCX" id="JQD-E8-Ty1"/>
                         <outlet property="previousButton" destination="Tsg-E3-DuZ" id="Dlb-zB-4bJ"/>
                         <outlet property="questionTextLabel" destination="1rp-ve-VhR" id="Znq-NN-F51"/>
+                        <segue destination="KxJ-p9-VeJ" kind="show" identifier="ShowBook" id="GTv-Au-JTe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGY-Hq-269" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3023" y="429"/>
+        </scene>
+        <!--Recommended Book-->
+        <scene sceneID="1kf-5N-WPg">
+            <objects>
+                <viewController id="KxJ-p9-VeJ" customClass="BookViewController" customModule="ReadingRecommender" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2bI-19-XYF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="SA6-qh-qGf">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FkZ-tt-UMP">
+                                <rect key="frame" x="24" y="196" width="366" height="101.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPh-qV-qsu">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="53"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="45"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQx-bP-4Yb">
+                                        <rect key="frame" x="0.0" y="73" width="366" height="28.5"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FkZ-tt-UMP" firstAttribute="leading" secondItem="Kag-Kv-dAK" secondAttribute="leading" constant="24" id="0Q5-KQ-qFF"/>
+                            <constraint firstItem="FkZ-tt-UMP" firstAttribute="top" secondItem="Kag-Kv-dAK" secondAttribute="top" constant="56" id="7Gr-PW-CeS"/>
+                            <constraint firstItem="Kag-Kv-dAK" firstAttribute="trailing" secondItem="SA6-qh-qGf" secondAttribute="trailing" id="7MB-W0-rsZ"/>
+                            <constraint firstAttribute="bottom" secondItem="SA6-qh-qGf" secondAttribute="bottom" id="Fo7-K1-Jg5"/>
+                            <constraint firstItem="Kag-Kv-dAK" firstAttribute="trailing" secondItem="FkZ-tt-UMP" secondAttribute="trailing" constant="24" id="Jve-AR-UrX"/>
+                            <constraint firstItem="SA6-qh-qGf" firstAttribute="top" secondItem="Kag-Kv-dAK" secondAttribute="top" id="ZsM-Fc-aOr"/>
+                            <constraint firstItem="SA6-qh-qGf" firstAttribute="leading" secondItem="Kag-Kv-dAK" secondAttribute="leading" id="l5u-Fp-6fS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kag-Kv-dAK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Recommended Book" id="mal-Wu-pgb">
+                        <barButtonItem key="leftBarButtonItem" title="Home" id="9Qq-t1-hZV">
+                            <connections>
+                                <action selector="homeButtonTapped:" destination="KxJ-p9-VeJ" id="82k-x8-lPK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="gQx-bP-4Yb" id="iCD-hD-wVs"/>
+                        <outlet property="titleLabel" destination="cPh-qV-qsu" id="J1n-h0-mKl"/>
+                        <segue destination="Zyc-kx-ew0" kind="unwind" identifier="goHome" unwindAction="myUnwindActionWithSegue:" id="Lh2-VB-9vn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kab-Bm-qjo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Zyc-kx-ew0" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3959" y="429"/>
         </scene>
     </scenes>
     <resources>
