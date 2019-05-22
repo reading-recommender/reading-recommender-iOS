@@ -14,6 +14,16 @@ enum Appearance {
     static var navButtonBackgroud = #colorLiteral(red: 0.337254902, green: 0.337254902, blue: 0.337254902, alpha: 1)
     
     static func setAppearance() {
+
+        UINavigationBar.appearance().barTintColor = secondaryColor
+        UIBarButtonItem.appearance().tintColor = .white
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+                    NSAttributedString.Key.foregroundColor: UIColor.white,
+                    NSAttributedString.Key.font: UIFont(name: "Bitter-Bold", size: 30)!
+                ]
+        
+        UITextField.appearance().font = UIFont(name: "Raleway-Regular", size: 18)
     }
     
     static func styleQuestion(button: UIButton) {
@@ -31,5 +41,7 @@ enum Appearance {
         button.layer.cornerRadius = 8
         button.titleLabel?.font = .systemFont(ofSize: 24, weight: .regular)
     }
+    
+    
     
 }

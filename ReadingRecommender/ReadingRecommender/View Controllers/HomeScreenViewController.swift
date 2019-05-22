@@ -23,14 +23,6 @@ class HomeScreenViewController: UIViewController {
         guard let user = userController?.user else { return }
         
         usernameTextField.text = user.username
-        
-        Appearance.styleNavigation(button: takeTestButton)
-        
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 30)
-        ]
     }
     
     @IBAction func signOutButtonTapped(_ sender: Any) {
