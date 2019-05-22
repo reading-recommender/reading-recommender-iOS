@@ -179,10 +179,11 @@ class QuestionViewController: UIViewController {
     }
     
     @objc func buttonClicked(sender: UIButton){
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.5) {
             self.clearButtons()
             sender.setTitleColor(.white, for: .normal)
-            sender.layer.backgroundColor = Appearance.secondaryColor.cgColor
+            sender.layer.borderColor = Appearance.tanColor.cgColor
+            sender.layer.backgroundColor = Appearance.tanColor.cgColor
             sender.layer.cornerRadius = 8
         }
         
@@ -196,7 +197,7 @@ class QuestionViewController: UIViewController {
     }
 
     @IBAction func previousButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
