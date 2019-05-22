@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Readin Recommender-->
+        <!--Reading Recommender-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeScreenViewController" customModule="ReadingRecommender" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,19 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background3" translatesAutoresizingMaskIntoConstraints="NO" id="nIA-O4-utN">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRR-ig-8eN">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.53229533450704225" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="p6Y-ru-TH1">
-                                <rect key="frame" x="24" y="128" width="366" height="403"/>
+                                <rect key="frame" x="24" y="180" width="366" height="403"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YK-JB-fIo">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbR-6q-a8O">
                                         <rect key="frame" x="0.0" y="62" width="366" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ch-VP-q8A">
@@ -38,7 +45,7 @@
                                         <string key="text">Are you ready to 
 get you next reading recommendation?</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kf-3M-VlZ">
@@ -53,14 +60,22 @@ get you next reading recommendation?</string>
                         </subviews>
                         <color key="backgroundColor" red="0.84313725490196079" green="0.80784313725490198" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="nIA-O4-utN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6h9-dP-aZV"/>
                             <constraint firstItem="p6Y-ru-TH1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="HIY-KC-Gs0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p6Y-ru-TH1" secondAttribute="trailing" constant="24" id="KIL-Cb-CBh"/>
+                            <constraint firstItem="JRR-ig-8eN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QH3-Ip-Sfe"/>
+                            <constraint firstItem="JRR-ig-8eN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VXA-bC-7jK"/>
                             <constraint firstItem="p6Y-ru-TH1" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.45" id="Z5o-3t-J7b"/>
                             <constraint firstItem="p6Y-ru-TH1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="asg-ev-Fmz"/>
+                            <constraint firstItem="nIA-O4-utN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iWm-06-Xbt"/>
+                            <constraint firstItem="JRR-ig-8eN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lhr-qz-uEG"/>
+                            <constraint firstItem="nIA-O4-utN" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="ofQ-Dx-jE2"/>
+                            <constraint firstAttribute="bottom" secondItem="JRR-ig-8eN" secondAttribute="bottom" id="pqM-7Q-q21"/>
+                            <constraint firstItem="nIA-O4-utN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pz9-lz-idw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Readin Recommender" id="cSD-eI-hqt">
+                    <navigationItem key="navigationItem" title="Reading Recommender" id="cSD-eI-hqt">
                         <barButtonItem key="leftBarButtonItem" title="Sign Out" id="p5Z-NI-Asl">
                             <connections>
                                 <action selector="signOutButtonTapped:" destination="BYZ-38-t0r" id="0Kf-4W-fjW"/>
@@ -74,7 +89,7 @@ get you next reading recommendation?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2023" y="430"/>
+            <point key="canvasLocation" x="2021.7391304347827" y="429.24107142857139"/>
         </scene>
         <!--Login-->
         <scene sceneID="fAb-jv-BKH">
@@ -85,7 +100,7 @@ get you next reading recommendation?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="uHs-jH-Xoo">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="YV0-oR-fDh">
                                 <rect key="frame" x="24" y="349.5" width="366" height="197"/>
@@ -104,7 +119,7 @@ get you next reading recommendation?</string>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqu-f9-I3q">
                                         <rect key="frame" x="0.0" y="108" width="366" height="35"/>
-                                        <color key="backgroundColor" red="0.33725490200000002" green="0.33725490200000002" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.46274509803921571" green="0.19607843137254902" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" red="0.96862745100000003" green="0.98823529409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -137,7 +152,7 @@ get you next reading recommendation?</string>
                                                     <segue destination="kQg-f3-KrY" kind="show" identifier="PresentSignUp" id="11r-0G-Qa5"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWN-gC-fAZ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWN-gC-fAZ">
                                                 <rect key="frame" x="191" y="0.0" width="175" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Continue As Guest">
@@ -258,8 +273,8 @@ get you next reading recommendation?</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lgM-G4-hgw" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jTa-97-O1S">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jTa-97-O1S">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.96862745100000003" green="0.98823529409999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.46274509800000002" green="0.1960784314" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -283,6 +298,7 @@ get you next reading recommendation?</string>
     <resources>
         <image name="background" width="5574" height="3376"/>
         <image name="background2" width="414" height="896"/>
+        <image name="background3" width="414" height="896"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kFU-V7-TbT"/>
