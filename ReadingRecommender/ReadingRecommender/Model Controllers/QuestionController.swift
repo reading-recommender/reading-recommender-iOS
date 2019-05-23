@@ -14,12 +14,12 @@ class QuestionControler {
     
     init() {
         questions.append(Question(question: "I prefer to read books written:", answers: ["Modern works",
-                                                                                         "Enlightenment and industrial Era (17th, 18th and part of the 19th  Century)",
-                                                                                         "Old books that have withstood the test of time (Everything before the 16th century)"]))
+                                                                                         "Enlightenment and industrial Era",
+                                                                                         "Old books that have withstood the test of time"]))
         
         questions.append(Question(question: "I prefer books that are more:", answers: ["Optimistic", "Pessimistic", "Realistic"]))
         
-        questions.append(Question(question: "After reading a book I like to feel:", answers: ["Joyful and relieved"," Somber and contemplative", "Achieved and informed"]))
+        questions.append(Question(question: "After reading a book I like to feel:", answers: ["Joyful and relieved","Somber and contemplative", "Achieved and informed"]))
         
         questions.append(Question(question: "When reading I appreciate humor:", answers: ["Not at all", "A little", "A large amount"]))
         
