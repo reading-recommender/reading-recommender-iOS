@@ -23,7 +23,7 @@ enum NetworkError: Error {
 class Network {
     var token: Token?
     
-    private let baseURL = URL(string: "https://reading-recommender.herokuapp.com/")!
+    private let baseURL = URL(string: "https://reader-recommend.herokuapp.com/")!
     
     
     func signUp(for user: User, completion: @escaping (Error?) -> Void) {

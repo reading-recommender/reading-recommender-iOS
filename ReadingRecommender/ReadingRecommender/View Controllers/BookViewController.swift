@@ -9,7 +9,7 @@
 import UIKit
 
 class BookViewController: UIViewController {
-    var questoinController: QuestionViewController?
+    var questoinController: QuestionControler?
     var bookController = BookController()
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -21,7 +21,19 @@ class BookViewController: UIViewController {
         updateView()
     }
     
+    // TODO: - Implement recommend call after I figure out if i am messing up or if it is server issue
     private func updateView() {
+        
+        guard let questionController = questoinController else { return }
+        
+        let answers = AnswerController(answer: questionController.answers)
+        
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .sortedKeys
+        let jsonData = try! encoder.encode(answers.answers[0])
+        let jsonString = String(data: jsonData, encoding: .utf8)!
+        print(jsonString)
+        
         titleLabel.text = bookController.books.title
         descriptionLabel.text = bookController.books.description
     }

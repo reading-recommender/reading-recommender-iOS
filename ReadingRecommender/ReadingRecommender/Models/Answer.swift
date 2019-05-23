@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Answer: Codable {
-    let q1: String
-    let q2: String
-    let q3: String
-    let q4: String
-    let q5: String
-    let q6: String
+struct Answer: Codable, Equatable {
+    var Q1: String
+    var Q2: String
+    var Q3: String
+    var Q4: String
+    var Q5: String
+    var Q6: String
 }

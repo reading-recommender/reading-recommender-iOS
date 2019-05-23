@@ -28,13 +28,58 @@ class QuestionViewController: UIViewController {
     private var questionTextLabel = UILabel()
     private var nextButton = UIButton()
     private var previousButton = UIButton()
-
+    let inceptionView = UIView()
+    private let scrollView: UIScrollView = {
+        let v = UIScrollView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
+    }()
     
     // MARK: - View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateViews()
+        guard let questionController = questionController else { return }
+        guard let currentQuestion = currentQuestion else { return }
+        
+        self.view.addSubview(scrollView)
+        
+        scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        
+        scrollView.addSubview(inceptionView)
+        
+        inceptionView.translatesAutoresizingMaskIntoConstraints = false
+        inceptionView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9).isActive = true
+        inceptionView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        inceptionView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
+        inceptionView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        inceptionView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        
+        createMainStackView()
+        inceptionView.addSubview(mainStackView)
+        constrainMainStackView()
+
+        scrollView.contentSize.width = self.view.frame.maxX
+
+        createQuestionTextLabel(questionController: questionController, index: currentQuestion)
+        mainStackView.addArrangedSubview(questionTextLabel)
+
+        createButtons(questionController: questionController, currentQuestion: currentQuestion)
+        createAnswerStackView()
+
+        mainStackView.addArrangedSubview(answerStackView)
+
+
+        createPreviouButton()
+        createNextButton(questionController: questionController, currentQuestion: currentQuestion)
+        createNavButtonStackView()
+
+        mainStackView.addArrangedSubview(navButtonStackView)
+        
     }
     
     private func updateViews() {
@@ -62,7 +107,7 @@ class QuestionViewController: UIViewController {
         questionTextLabel.text = questionController.questions[index].question
         questionTextLabel.sizeToFit()
 
-        view.addSubview(questionTextLabel)
+//        view.addSubview(questionTextLabel)
     }
     
     private func createButtons(questionController: QuestionControler, currentQuestion: Int) {
@@ -94,7 +139,7 @@ class QuestionViewController: UIViewController {
     
     private func createAnswerStackView() {
         answerStackView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(answerStackView)
+//        view.addSubview(answerStackView)
         
         answerStackView.axis = .vertical
         answerStackView.distribution = .fill
@@ -108,7 +153,7 @@ class QuestionViewController: UIViewController {
     
     private func createPreviouButton() {
         previousButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(previousButton)
+//        view.addSubview(previousButton)
         
         previousButton.setTitle("Previous", for: .normal)
         previousButton.titleLabel?.font = UIFont(name: "Raleway-Regular", size: 22)
@@ -130,7 +175,7 @@ class QuestionViewController: UIViewController {
     
     private func createNextButton(questionController: QuestionControler, currentQuestion: Int) {
         nextButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(nextButton)
+//        view.addSubview(nextButton)
         
         if currentQuestion == questionController.questions.count - 1 {
             nextButton.setTitle("Finish", for: .normal)
@@ -157,7 +202,7 @@ class QuestionViewController: UIViewController {
     
     private func createNavButtonStackView() {
         navButtonStackView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(navButtonStackView)
+//        view.addSubview(navButtonStackView)
         
         navButtonStackView.axis = .horizontal
         navButtonStackView.distribution = .fillEqually
@@ -170,24 +215,29 @@ class QuestionViewController: UIViewController {
     
     private func createMainStackView() {
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(mainStackView)
+//        view.addSubview(mainStackView)
         
         mainStackView.axis = .vertical
         mainStackView.distribution = .fill
         mainStackView.alignment = .fill
-        mainStackView.spacing = 24
+        mainStackView.spacing = 8
+//        mainStackView.addArrangedSubview(questionTextLabel)
+//        mainStackView.addArrangedSubview(answerStackView)
+//        mainStackView.addArrangedSubview(navButtonStackView)
+
+
+
         
-        mainStackView.addArrangedSubview(questionTextLabel)
-        mainStackView.addArrangedSubview(answerStackView)
-        mainStackView.addArrangedSubview(navButtonStackView)
-
-
+    }
+    
+    private func constrainMainStackView() {
         NSLayoutConstraint.activate([
-                mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
-                mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
-                mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            mainStackView.leadingAnchor.constraint(equalTo: inceptionView.leadingAnchor),
+            mainStackView.trailingAnchor.constraint(equalTo: inceptionView.trailingAnchor),
+            mainStackView.topAnchor.constraint(equalTo: inceptionView.topAnchor),
+            mainStackView.bottomAnchor.constraint(equalTo: inceptionView.bottomAnchor),
+            mainStackView.widthAnchor.constraint(equalTo: inceptionView.widthAnchor)
             ])
-        
     }
     
     // MARK: - Action Handling Functions
@@ -282,6 +332,17 @@ class QuestionViewController: UIViewController {
             
             destination.currentQuestion = currentQuestion + 1
             destination.questionController = questionController
+            
+        } else if segue.identifier == "ShowBook" {
+            
+            guard let destination = segue.destination as? BookViewController,
+            let questionController = questionController
+            else {
+                NSLog("Could not create destination for recommended book")
+                return
+            }
+            
+            destination.questoinController = questionController
         }
     }
     

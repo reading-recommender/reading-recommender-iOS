@@ -23,6 +23,7 @@
 		EC9750BA22934ADF00CC391A /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9750B922934ADF00CC391A /* HomeScreenViewController.swift */; };
 		EC9750BC22934CC900CC391A /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9750BB22934CC900CC391A /* QuestionViewController.swift */; };
 		ECB1C7902296A9C800243526 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB1C78F2296A9C800243526 /* Answer.swift */; };
+		ECB1C7922296AAA200243526 /* AnswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB1C7912296AAA200243526 /* AnswerController.swift */; };
 		ECEB11532294DD590011DD85 /* Bitter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECEB11512294DD580011DD85 /* Bitter-Regular.ttf */; };
 		ECEB11542294DD590011DD85 /* Bitter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECEB11522294DD590011DD85 /* Bitter-Bold.ttf */; };
 		ECEB11572294DD880011DD85 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECEB11552294DD880011DD85 /* Raleway-Light.ttf */; };
@@ -51,6 +52,7 @@
 		EC9750B922934ADF00CC391A /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		EC9750BB22934CC900CC391A /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		ECB1C78F2296A9C800243526 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		ECB1C7912296AAA200243526 /* AnswerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerController.swift; sourceTree = "<group>"; };
 		ECEB11512294DD580011DD85 /* Bitter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bitter-Regular.ttf"; sourceTree = "<group>"; };
 		ECEB11522294DD590011DD85 /* Bitter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bitter-Bold.ttf"; sourceTree = "<group>"; };
 		ECEB11552294DD880011DD85 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				EC9750B52293443600CC391A /* UserController.swift */,
 				EC9750B7229344A600CC391A /* QuestionController.swift */,
 				EC4A37A02293690B00FE658F /* BookController.swift */,
+				ECB1C7912296AAA200243526 /* AnswerController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				EC4A379F229368D100FE658F /* Book.swift in Sources */,
 				EC03D69F2293B8D7009E16AE /* Network.swift in Sources */,
 				EC9750B8229344A600CC391A /* QuestionController.swift in Sources */,
+				ECB1C7922296AAA200243526 /* AnswerController.swift in Sources */,
 				EC97509322931AEF00CC391A /* AppDelegate.swift in Sources */,
 				EC9750BC22934CC900CC391A /* QuestionViewController.swift in Sources */,
 				ECFD2DD922949FF8005D1620 /* Token.swift in Sources */,
