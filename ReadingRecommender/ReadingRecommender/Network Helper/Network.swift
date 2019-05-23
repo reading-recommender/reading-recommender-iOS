@@ -107,4 +107,56 @@ class Network {
             }.resume()
     }
     
+    func getRecommendation(answers: Answer, completion: @escaping (Result<Book, NetworkError>) -> Void){
+        
+        let url = baseURL.appendingPathComponent("recommend")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .sortedKeys
+        do {
+            request.httpBody = try encoder.encode(answers)
+        } catch {
+            NSLog("Could not encode answers")
+            completion(.failure(.otherError))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            if let error = error {
+                NSLog("Error getting recommendation: \(error)")
+                completion(.failure(.otherError))
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+                NSLog("Incorrect response from server: \(response.statusCode)")
+                completion(.failure(.badResponse))
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Bad data")
+                completion(.failure(.badData))
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                let book: Book = try decoder.decode(Book.self, from: data)
+                completion(.success(book))
+                return
+            } catch {
+                NSLog("Could not decode data")
+                completion(.failure(.noDecode))
+                return
+            }
+            
+        }.resume()
+    }
+    
 }

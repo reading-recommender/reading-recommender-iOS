@@ -11,6 +11,7 @@ import UIKit
 class BookViewController: UIViewController {
     var questoinController: QuestionControler?
     var bookController = BookController()
+    var networkController = Network()
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -28,14 +29,19 @@ class BookViewController: UIViewController {
         
         let answers = AnswerController(answer: questionController.answers)
         
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .sortedKeys
-        let jsonData = try! encoder.encode(answers.answers[0])
-        let jsonString = String(data: jsonData, encoding: .utf8)!
-        print(jsonString)
-        
-        titleLabel.text = bookController.books.title
-        descriptionLabel.text = bookController.books.description
+        networkController.getRecommendation(answers: answers.answers[0]) { result in
+            
+            do {
+                let book = try result.get()
+                
+                DispatchQueue.main.async {
+                    self.titleLabel.text = book.book
+                    self.descriptionLabel.text = book.description
+                }
+            } catch {
+                print(error)
+            }
+        }
     }
 
     @IBAction func homeButtonTapped(_ sender: Any) {

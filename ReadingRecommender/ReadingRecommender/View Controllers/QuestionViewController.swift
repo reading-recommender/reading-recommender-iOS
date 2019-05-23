@@ -277,8 +277,6 @@ class QuestionViewController: UIViewController {
         
         question.answers[currentQuestion] = sender.titleLabel!.text!
         
-        print(question.answers)
-        
         itemSelected = true
 
     }

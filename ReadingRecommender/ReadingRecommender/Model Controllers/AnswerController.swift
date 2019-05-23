@@ -12,6 +12,6 @@ class AnswerController {
     var answers: [Answer] = []
     
     init(answer: [String]) {
-        answers.append(Answer(q1: answer[0], q2: answer[1], q3: answer[2], q4: answer[3], q5: answer[4], q6: answer[5]))
+        answers.append(Answer(Q1: answer[0], Q2: answer[1], Q3: answer[2], Q4: answer[3], Q5: answer[4], Q6: answer[5]))
     }
 }

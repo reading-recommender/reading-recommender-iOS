@@ -13,9 +13,9 @@ class QuestionControler {
     var answers: [String] = []
     
     init() {
-        questions.append(Question(question: "I prefer to read books written:", answers: ["Modern Works",
-                                                                                         "Enlightenment and industrial Era",
-                                                                                         "Old books that have withstood the test of time"]))
+        questions.append(Question(question: "I prefer to read books written:", answers: ["Modern works",
+                                                                                         "Enlightenment and industrial Era (17th, 18th and part of the 19th  Century)",
+                                                                                         "Old books that have withstood the test of time (Everything before the 16th century)"]))
         
         questions.append(Question(question: "I prefer books that are more:", answers: ["Optimistic", "Pessimistic", "Realistic"]))
         
