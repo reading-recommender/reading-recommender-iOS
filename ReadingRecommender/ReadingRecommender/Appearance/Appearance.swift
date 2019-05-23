@@ -19,6 +19,7 @@ enum Appearance {
         UINavigationBar.appearance().barTintColor = secondaryColor
         UIBarButtonItem.appearance().tintColor = .white
         
+        
         UINavigationBar.appearance().largeTitleTextAttributes = [
                     NSAttributedString.Key.foregroundColor: UIColor.white,
                     NSAttributedString.Key.font: UIFont(name: "Bitter-Bold", size: 30)!

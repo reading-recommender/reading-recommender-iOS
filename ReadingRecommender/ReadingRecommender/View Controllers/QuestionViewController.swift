@@ -21,6 +21,7 @@ class QuestionViewController: UIViewController {
     
     // MARK UI Elements
     private var buttons: [UIButton] = []
+    private var labels: [UILabel] = []
     private var mainStackView = UIStackView()
     private var answerStackView = UIStackView()
     private var navButtonStackView = UIStackView()
@@ -44,7 +45,7 @@ class QuestionViewController: UIViewController {
         createButtons(questionController: questionController, currentQuestion: currentQuestion)
         createAnswerStackView()
         createPreviouButton()
-        createNextButton()
+        createNextButton(questionController: questionController, currentQuestion: currentQuestion)
         createNavButtonStackView()
         createMainStackView()
     }
@@ -67,27 +68,23 @@ class QuestionViewController: UIViewController {
     private func createButtons(questionController: QuestionControler, currentQuestion: Int) {
         
         for index in 0..<questionController.questions[currentQuestion].answers.count {
-            let button = UIButton(frame: CGRect(x: 300, y: 100, width: 100, height: 100))
+            let button = UIButton()
             
             button.translatesAutoresizingMaskIntoConstraints = false
             
-            button.tag = index
-            
             button.setTitle(questionController.questions[currentQuestion].answers[index], for: .normal)
             button.titleLabel?.font = UIFont(name: "Raleway-Regular", size: 18)
-            button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+            button.titleLabel?.numberOfLines = 0
             button.titleLabel?.textAlignment = .center
-            button.tintColor = Appearance.tanColor
-            
-            button.backgroundColor = .clear
+            button.setTitleColor(Appearance.tanColor, for: .normal)
             
             button.layer.borderColor = Appearance.tanColor.cgColor
-            button.layer.borderWidth = 1
+            button.layer.borderWidth = 2
             button.layer.cornerRadius = 8
             
-            button.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
+            button.contentEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
             
-            button.sizeToFit()
+            button.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
             
             view.addSubview(button)
             buttons.append(button)
@@ -102,7 +99,7 @@ class QuestionViewController: UIViewController {
         answerStackView.axis = .vertical
         answerStackView.distribution = .fill
         answerStackView.alignment = .fill
-        answerStackView.spacing = 8
+        answerStackView.spacing = 16
         
         for button in buttons {
             answerStackView.addArrangedSubview(button)
@@ -131,11 +128,16 @@ class QuestionViewController: UIViewController {
         previousButton.sizeToFit()
     }
     
-    private func createNextButton() {
+    private func createNextButton(questionController: QuestionControler, currentQuestion: Int) {
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(nextButton)
         
-        nextButton.setTitle("Next", for: .normal)
+        if currentQuestion == questionController.questions.count - 1 {
+            nextButton.setTitle("Finish", for: .normal)
+        } else {
+            nextButton.setTitle("Next", for: .normal)
+        }
+        
         nextButton.titleLabel?.font = UIFont(name: "Raleway-Regular", size: 22)
         nextButton.titleLabel?.textAlignment = .center
         nextButton.setTitleColor(.white, for: .normal)
@@ -173,7 +175,7 @@ class QuestionViewController: UIViewController {
         mainStackView.axis = .vertical
         mainStackView.distribution = .fill
         mainStackView.alignment = .fill
-        mainStackView.spacing = 8
+        mainStackView.spacing = 24
         
         mainStackView.addArrangedSubview(questionTextLabel)
         mainStackView.addArrangedSubview(answerStackView)
@@ -188,8 +190,27 @@ class QuestionViewController: UIViewController {
         
     }
     
+    // MARK: - Action Handling Functions
     private func clearButtons() {
-
+        for buttton in buttons {
+            UIView.animate(withDuration: 05) {
+                buttton.setTitleColor(Appearance.tanColor, for: .normal)
+                buttton.layer.borderColor = Appearance.tanColor.cgColor
+                buttton.layer.backgroundColor = UIColor.clear.cgColor
+            }
+        }
+    }
+    
+    private func isSelected() -> Bool {
+        
+        if itemSelected {
+            return true
+        } else {
+            let alert = UIAlertController(title: "Nothing Selected", message: "Please select an answer to continue.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(alert, animated: true)
+            return false
+        }
     }
     
     @objc func buttonClicked(sender: UIButton){
@@ -201,10 +222,12 @@ class QuestionViewController: UIViewController {
             sender.layer.cornerRadius = 8
         }
         
-//        guard let questionIndex = currentQuestion else { return }
-//        guard let question = questionController else { return }
+        guard let currentQuestion = currentQuestion else { return }
+        guard let question = questionController else { return }
         
-//        question.listOfAnswers[questionIndex] = sender.titleLabel!.text!
+        question.answers[currentQuestion] = sender.titleLabel!.text!
+        
+        print(question.answers)
         
         itemSelected = true
 
@@ -225,6 +248,19 @@ class QuestionViewController: UIViewController {
     
     @objc func nextButtonTouchUp(sender: UIButton){
         nextButton.setTitleColor(.white, for: .normal)
+        
+        guard let currentQuestion = currentQuestion else { return }
+        guard let questionController = questionController else { return }
+        
+        if currentQuestion == questionController.questions.count - 1 {
+            if isSelected() {
+                performSegue(withIdentifier: "ShowBook", sender: nil)
+            }
+        } else {
+            if isSelected() {
+                performSegue(withIdentifier: "NextQuestion", sender: nil)
+            }
+        }
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {

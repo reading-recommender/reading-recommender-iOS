@@ -10,6 +10,7 @@ import Foundation
 
 class QuestionControler {
     var questions: [Question] = []
+    var answers: [String] = []
     
     init() {
         questions.append(Question(question: "I prefer to read books written:", answers: ["Modern Works",
@@ -25,5 +26,9 @@ class QuestionControler {
         questions.append(Question(question: "I’d prefer to read:", answers: ["Western", "Romanticism", "Dystopia", "Drama", "Fantasy", "Historical", "Other"]))
         
         questions.append(Question(question: "My preferred book length is:", answers: ["Short", "Long"]))
+        
+        for _ in 0..<questions.count {
+            answers.append("")
+        }
     }
 }
