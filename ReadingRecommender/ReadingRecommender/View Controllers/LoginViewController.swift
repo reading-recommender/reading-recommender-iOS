@@ -100,6 +100,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UserInfoDelega
             DispatchQueue.main.async {
                 self.userNameTextField.text = ""
                 self.passwordTextField.text = ""
+//                let alert = UIAlertController(title: "Token", message: "\(self.networkControll.token)", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+//                self.present(alert, animated: true)
                 self.performSegue(withIdentifier: "login", sender: nil)
             }
         }

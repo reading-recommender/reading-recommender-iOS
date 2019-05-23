@@ -9,22 +9,26 @@
 import Foundation
 
 class QuestionControler {
-    var questions: Question?
-    var listOfAnswers: [String] = []
-    var networkController = Network()
+    var questions: [Question] = []
+    var answers: [String] = []
     
     init() {
+        questions.append(Question(question: "I prefer to read books written:", answers: ["Modern works",
+                                                                                         "Enlightenment and industrial Era",
+                                                                                         "Old books that have withstood the test of time"]))
         
-        networkController.getQuestions { result in
-            do {
-                self.questions = try result.get()
-            } catch {
-                NSLog("Error")
-            }
-        }
-
-        for _ in 1...10 {
-            listOfAnswers.append("")
+        questions.append(Question(question: "I prefer books that are more:", answers: ["Optimistic", "Pessimistic", "Realistic"]))
+        
+        questions.append(Question(question: "After reading a book I like to feel:", answers: ["Joyful and relieved","Somber and contemplative", "Achieved and informed"]))
+        
+        questions.append(Question(question: "When reading I appreciate humor:", answers: ["Not at all", "A little", "A large amount"]))
+        
+        questions.append(Question(question: "I’d prefer to read:", answers: ["Western", "Romanticism", "Dystopia", "Drama", "Fantasy", "Historical", "Other"]))
+        
+        questions.append(Question(question: "My preferred book length is:", answers: ["Short", "Long"]))
+        
+        for _ in 0..<questions.count {
+            answers.append("")
         }
     }
 }
