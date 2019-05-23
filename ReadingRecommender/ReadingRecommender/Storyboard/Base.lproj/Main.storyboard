@@ -274,14 +274,6 @@ get you next reading recommendation?</string>
             </objects>
             <point key="canvasLocation" x="986.95652173913049" y="894.64285714285711"/>
         </scene>
-        <!--Question-->
-        <scene sceneID="aZO-Fs-bKP">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Question" id="hXn-sH-tH3" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cYc-ze-dgJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2260" y="67"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="owQ-lV-28W">
             <objects>
@@ -316,135 +308,32 @@ get you next reading recommendation?</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background4" translatesAutoresizingMaskIntoConstraints="NO" id="gxi-A5-HXw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background4" translatesAutoresizingMaskIntoConstraints="NO" id="gxi-A5-HXw">
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARf-60-GYn">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ARf-60-GYn">
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqs-WK-yOQ">
-                                        <rect key="frame" x="192" y="684" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <segue destination="ctX-eS-tIa" kind="show" identifier="NextQuestion" id="UNg-Xe-hpu"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.79206095950704225" colorSpace="calibratedRGB"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="h1Y-si-iXt">
-                                <rect key="frame" x="16" y="180" width="382" height="321.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rp-ve-VhR">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="28.5"/>
-                                        <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IZU-ER-228">
-                                        <rect key="frame" x="0.0" y="60.5" width="382" height="188"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Due-dJ-Mr9">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="41"/>
-                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
-                                                <state key="normal" title="Answer 1">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHR-dH-0Bp">
-                                                <rect key="frame" x="0.0" y="49" width="382" height="41"/>
-                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
-                                                <state key="normal" title="Answer 2">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WA-05-ohx">
-                                                <rect key="frame" x="0.0" y="98" width="382" height="41"/>
-                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
-                                                <state key="normal" title="Answer 3">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgB-9D-kSF">
-                                                <rect key="frame" x="0.0" y="147" width="382" height="41"/>
-                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
-                                                <state key="normal" title="Answer 4">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="rqi-1O-pcN">
-                                        <rect key="frame" x="0.0" y="280.5" width="382" height="41"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tsg-E3-DuZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="173" height="41"/>
-                                                <color key="backgroundColor" red="0.46274509800000002" green="0.1960784314" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
-                                                <state key="normal" title="Previous">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <integer key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="previousButtonTapped:" destination="ctX-eS-tIa" eventType="touchUpInside" id="ZRd-8s-KZB"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnq-lt-eCX">
-                                                <rect key="frame" x="209" y="0.0" width="173" height="41"/>
-                                                <color key="backgroundColor" red="0.46274509800000002" green="0.1960784314" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="24"/>
-                                                <state key="normal" title="Next">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <integer key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="nextButtonTapped:" destination="ctX-eS-tIa" eventType="touchUpInside" id="pnj-bP-I2g"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ARf-60-GYn" secondAttribute="bottom" id="9ae-ES-odU"/>
-                            <constraint firstAttribute="bottom" secondItem="gxi-A5-HXw" secondAttribute="bottom" id="EB0-NW-bfi"/>
-                            <constraint firstItem="h1Y-si-iXt" firstAttribute="top" secondItem="xhL-kc-6jH" secondAttribute="top" constant="40" id="HKm-x5-CvD"/>
-                            <constraint firstItem="gxi-A5-HXw" firstAttribute="trailing" secondItem="xhL-kc-6jH" secondAttribute="trailing" id="LU4-jM-jAd"/>
-                            <constraint firstItem="gxi-A5-HXw" firstAttribute="top" secondItem="xhL-kc-6jH" secondAttribute="top" id="OKu-8x-wW9"/>
-                            <constraint firstItem="ARf-60-GYn" firstAttribute="leading" secondItem="xhL-kc-6jH" secondAttribute="leading" id="TXX-ae-IcW"/>
-                            <constraint firstItem="gxi-A5-HXw" firstAttribute="leading" secondItem="xhL-kc-6jH" secondAttribute="leading" id="Uc0-me-OKj"/>
-                            <constraint firstItem="h1Y-si-iXt" firstAttribute="leading" secondItem="xhL-kc-6jH" secondAttribute="leading" constant="16" id="aHW-7Q-ejZ"/>
-                            <constraint firstItem="ARf-60-GYn" firstAttribute="top" secondItem="xhL-kc-6jH" secondAttribute="top" id="aOr-5f-Tga"/>
-                            <constraint firstItem="xhL-kc-6jH" firstAttribute="trailing" secondItem="ARf-60-GYn" secondAttribute="trailing" id="ezK-Ny-0nj"/>
-                            <constraint firstItem="xhL-kc-6jH" firstAttribute="trailing" secondItem="h1Y-si-iXt" secondAttribute="trailing" constant="16" id="vmB-Px-rLY"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xhL-kc-6jH"/>
                     </view>
                     <navigationItem key="navigationItem" title="Questions" id="WQH-hf-tgq">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Jwo-ZY-M5D"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Jwo-ZY-M5D">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="ctX-eS-tIa" id="jEv-4n-ILe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="answerFourButton" destination="MgB-9D-kSF" id="5vH-Xl-pLG"/>
-                        <outlet property="answerOneButton" destination="Due-dJ-Mr9" id="8UJ-fF-UUo"/>
-                        <outlet property="answerThreeButton" destination="6WA-05-ohx" id="oB8-N8-Sdk"/>
-                        <outlet property="answerTwoButton" destination="gHR-dH-0Bp" id="I6t-oD-U2J"/>
-                        <outlet property="nextButton" destination="jnq-lt-eCX" id="JQD-E8-Ty1"/>
-                        <outlet property="previousButton" destination="Tsg-E3-DuZ" id="Dlb-zB-4bJ"/>
-                        <outlet property="questionTextLabel" destination="1rp-ve-VhR" id="Znq-NN-F51"/>
-                        <segue destination="KxJ-p9-VeJ" kind="show" identifier="ShowBook" id="GTv-Au-JTe"/>
+                        <segue destination="i9g-q2-pGt" kind="unwind" identifier="ReturnHome" unwindAction="myUnwindActionWithSegue:" id="Vun-CL-q3F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGY-Hq-269" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="i9g-q2-pGt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3023" y="429"/>
         </scene>
@@ -457,10 +346,10 @@ get you next reading recommendation?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="SA6-qh-qGf">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FkZ-tt-UMP">
-                                <rect key="frame" x="24" y="196" width="366" height="101.5"/>
+                                <rect key="frame" x="24" y="100" width="366" height="101.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPh-qV-qsu">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="53"/>
@@ -505,7 +394,7 @@ get you next reading recommendation?</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kab-Bm-qjo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Zyc-kx-ew0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3959" y="429"/>
+            <point key="canvasLocation" x="3022" y="-464"/>
         </scene>
     </scenes>
     <resources>

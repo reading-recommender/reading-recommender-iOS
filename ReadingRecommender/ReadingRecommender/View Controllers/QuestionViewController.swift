@@ -12,170 +12,184 @@ class QuestionViewController: UIViewController {
     // MARK: - Properties
     var currentQuestion: Int?
     var questionController: QuestionControler?
-    var numberOfAnsweredQuestions: Int?
-    
 
     
     // MARK: - Private Properties
-    private var shouldCancel = false
     private var shouldFinish = false
     private var itemSelected = false
+    
+    
+    // MARK UI Elements
+    private var buttons: [UIButton] = []
+    private var mainStackView = UIStackView()
+    private var answerStackView = UIStackView()
+    private var navButtonStackView = UIStackView()
+    private var questionTextLabel = UILabel()
+    private var nextButton = UIButton()
+    private var previousButton = UIButton()
 
-    // MARK: - IBOutlets
-    @IBOutlet weak var questionTextLabel: UILabel!
-    @IBOutlet weak var answerOneButton: UIButton!
-    @IBOutlet weak var answerTwoButton: UIButton!
-    @IBOutlet weak var answerThreeButton: UIButton!
-    @IBOutlet weak var answerFourButton: UIButton!
-    @IBOutlet weak var previousButton: UIButton!
-    @IBOutlet weak var nextButton: UIButton!
     
     // MARK: - View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateViews()
+    }
+    
+    private func updateViews() {
+        guard let questionController = questionController else { return }
+        guard let currentQuestion = currentQuestion else { return }
+        
+        createQuestionTextLabel(questionController: questionController, index: currentQuestion)
+        createButtons(questionController: questionController, currentQuestion: currentQuestion)
+        createAnswerStackView()
+        createPreviouButton()
+        createNextButton()
+        createNavButtonStackView()
+        createMainStackView()
+    }
+    
+    // MARK: - UI Creation Functions
+    private func createQuestionTextLabel(questionController: QuestionControler, index: Int) {
+        questionTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        questionTextLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        questionTextLabel.textAlignment = .center
+        questionTextLabel.textColor = .white
+        questionTextLabel.font = UIFont(name: "Raleway-Regular", size: 30)
+        questionTextLabel.numberOfLines = 0
+        questionTextLabel.lineBreakMode = .byWordWrapping
+        questionTextLabel.text = questionController.questions[index].question
+        questionTextLabel.sizeToFit()
 
-        updateView()
-        previousButtonSetUp()
-        nextButtonSetUp()
-        setButtons()
-        
+        view.addSubview(questionTextLabel)
     }
     
-    private func updateView() {
+    private func createButtons(questionController: QuestionControler, currentQuestion: Int) {
         
-        guard let questionIndex = currentQuestion else {
-            NSLog("Could not get the index for the current question")
-            return
-        }
-        
-        guard let question = questionController?.questions else {
-            NSLog("Couldn't load question")
-            return
-        }
-        
-        
-//        questionTextLabel.text = question.question
-//        answerOneButton.setTitle(question.answers[0].answer1, for: .normal)
-//        answerTwoButton.setTitle(question.answers[0].answer2, for: .normal)
-//        answerThreeButton.setTitle(question.answers[0].answer3, for: .normal)
-//        answerFourButton.setTitle(question.answers[0].answer4, for: .normal)
-        
-        switch questionIndex {
-        case 0:
-            questionTextLabel.text = question.question1[0].question
-            answerOneButton.setTitle(question.question1[0].answers[0].answer1, for: .normal)
-            answerTwoButton.setTitle(question.question1[0].answers[0].answer2, for: .normal)
-            answerThreeButton.setTitle(question.question1[0].answers[0].answer3, for: .normal)
-            answerFourButton.setTitle(question.question1[0].answers[0].answer4, for: .normal)
-        case 1:
-            questionTextLabel.text = question.question2[0].question
-            answerOneButton.setTitle(question.question2[0].answers[0].answer1, for: .normal)
-            answerTwoButton.setTitle(question.question2[0].answers[0].answer2, for: .normal)
-            answerThreeButton.setTitle(question.question2[0].answers[0].answer3, for: .normal)
-            answerFourButton.setTitle(question.question2[0].answers[0].answer4, for: .normal)
-        case 2:
-            questionTextLabel.text = question.question3[0].question
-            answerOneButton.setTitle(question.question3[0].answers[0].answer1, for: .normal)
-            answerTwoButton.setTitle(question.question3[0].answers[0].answer2, for: .normal)
-            answerThreeButton.setTitle(question.question3[0].answers[0].answer3, for: .normal)
-            answerFourButton.setTitle(question.question3[0].answers[0].answer4, for: .normal)
-        case 3:
-            questionTextLabel.text = question.question4[0].question
-            answerOneButton.setTitle(question.question4[0].answers[0].answer1, for: .normal)
-            answerTwoButton.setTitle(question.question4[0].answers[0].answer2, for: .normal)
-            answerThreeButton.setTitle(question.question4[0].answers[0].answer3, for: .normal)
-            answerFourButton.setTitle(question.question4[0].answers[0].answer4, for: .normal)
-        case 4:
-            questionTextLabel.text = question.question5[0].question
-            answerOneButton.setTitle(question.question5[0].answers[0].answer1, for: .normal)
-            answerTwoButton.setTitle(question.question5[0].answers[0].answer2, for: .normal)
-            answerThreeButton.setTitle(question.question5[0].answers[0].answer3, for: .normal)
-            answerFourButton.setTitle(question.question5[0].answers[0].answer4, for: .normal)
-        case 5:
-            questionTextLabel.text = question.question6[0].question
-            answerOneButton.setTitle(question.question6[0].answers[0].answer1, for: .normal)
-            answerTwoButton.setTitle(question.question6[0].answers[0].answer2, for: .normal)
-            answerThreeButton.setTitle(question.question6[0].answers[0].answer3, for: .normal)
-            answerFourButton.setTitle(question.question6[0].answers[0].answer4, for: .normal)
-        case 6:
-            questionTextLabel.text = question.question7[0].question
-            answerOneButton.setTitle(question.question7[0].answers[0].answer1, for: .normal)
-            answerTwoButton.setTitle(question.question7[0].answers[0].answer2, for: .normal)
-            answerThreeButton.setTitle(question.question7[0].answers[0].answer3, for: .normal)
-            answerFourButton.setTitle(question.question7[0].answers[0].answer4, for: .normal)
-        case 7:
-            questionTextLabel.text = question.question8[0].question
-            answerOneButton.setTitle(question.question8[0].answers[0].answer1, for: .normal)
-            answerTwoButton.setTitle(question.question8[0].answers[0].answer2, for: .normal)
-            answerThreeButton.setTitle(question.question8[0].answers[0].answer3, for: .normal)
-            answerFourButton.setTitle(question.question8[0].answers[0].answer4, for: .normal)
-        case 8:
-            questionTextLabel.text = question.question9[0].question
-            answerOneButton.setTitle(question.question9[0].answers[0].answer1, for: .normal)
-            answerTwoButton.setTitle(question.question9[0].answers[0].answer2, for: .normal)
-            answerThreeButton.setTitle(question.question9[0].answers[0].answer3, for: .normal)
-            answerFourButton.setTitle(question.question9[0].answers[0].answer4, for: .normal)
-        case 9:
-            questionTextLabel.text = question.question10[0].question
-            answerOneButton.setTitle(question.question10[0].answers[0].answer1, for: .normal)
-            answerTwoButton.setTitle(question.question10[0].answers[0].answer2, for: .normal)
-            answerThreeButton.setTitle(question.question10[0].answers[0].answer3, for: .normal)
-            answerFourButton.setTitle(question.question10[0].answers[0].answer4, for: .normal)
-        default:
-            let alert = UIAlertController(title: "Issue", message: "There was an issue forming the question", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            present(alert, animated: true)
+        for index in 0..<questionController.questions[currentQuestion].answers.count {
+            let button = UIButton(frame: CGRect(x: 300, y: 100, width: 100, height: 100))
+            
+            button.translatesAutoresizingMaskIntoConstraints = false
+            
+            button.tag = index
+            
+            button.setTitle(questionController.questions[currentQuestion].answers[index], for: .normal)
+            button.titleLabel?.font = UIFont(name: "Raleway-Regular", size: 18)
+            button.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+            button.titleLabel?.textAlignment = .center
+            button.tintColor = Appearance.tanColor
+            
+            button.backgroundColor = .clear
+            
+            button.layer.borderColor = Appearance.tanColor.cgColor
+            button.layer.borderWidth = 1
+            button.layer.cornerRadius = 8
+            
+            button.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
+            
+            button.sizeToFit()
+            
+            view.addSubview(button)
+            buttons.append(button)
         }
         
     }
     
-    private func previousButtonSetUp() {
+    private func createAnswerStackView() {
+        answerStackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(answerStackView)
         
-        if let currentQuestion = currentQuestion, currentQuestion == 0 {
-            previousButton.setTitle("Cancel", for: .normal)
-            shouldCancel = true
-        } else {
-            previousButton.setTitle("Previous", for: .normal)
-            shouldCancel = false
+        answerStackView.axis = .vertical
+        answerStackView.distribution = .fill
+        answerStackView.alignment = .fill
+        answerStackView.spacing = 8
+        
+        for button in buttons {
+            answerStackView.addArrangedSubview(button)
         }
     }
     
-    private func nextButtonSetUp() {
-//        guard let questionController = questionController else { return }
+    private func createPreviouButton() {
+        previousButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(previousButton)
         
-        if let currentQuestion = currentQuestion, currentQuestion == 9 {
-            nextButton.setTitle("Finish", for: .normal)
-            shouldFinish = true
-        } else {
-            nextButton.setTitle("Next", for: .normal)
-            shouldFinish = false
-        }
+        previousButton.setTitle("Previous", for: .normal)
+        previousButton.titleLabel?.font = UIFont(name: "Raleway-Regular", size: 22)
+        previousButton.titleLabel?.textAlignment = .center
+        previousButton.setTitleColor(.white, for: .normal)
+        previousButton.setTitleColor(.gray, for: .selected)
+        
+        previousButton.backgroundColor = Appearance.secondaryColor
+        
+        previousButton.layer.borderColor = Appearance.secondaryColor.cgColor
+        previousButton.layer.borderWidth = 1
+        previousButton.layer.cornerRadius = 8
+        
+        previousButton.addTarget(self, action: #selector(previousButtonTouchDown(sender:)), for: .touchDown)
+        previousButton.addTarget(self, action: #selector(previousButtonTouchUp(sender:)), for: .touchUpInside)
+        
+        previousButton.sizeToFit()
     }
     
-    private func setButtons() {
-        Appearance.styleQuestion(button: answerOneButton)
-        Appearance.styleQuestion(button: answerTwoButton)
-        Appearance.styleQuestion(button: answerThreeButton)
-        Appearance.styleQuestion(button: answerFourButton)
+    private func createNextButton() {
+        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(nextButton)
         
-        answerOneButton.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: .touchUpInside)
-        answerOneButton.tag = 1
-        answerTwoButton.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: .touchUpInside)
-        answerOneButton.tag = 2
-        answerThreeButton.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: .touchUpInside)
-        answerOneButton.tag = 3
-        answerFourButton.addTarget(self, action: #selector(self.buttonClicked(sender:)), for: .touchUpInside)
-        answerOneButton.tag = 4
+        nextButton.setTitle("Next", for: .normal)
+        nextButton.titleLabel?.font = UIFont(name: "Raleway-Regular", size: 22)
+        nextButton.titleLabel?.textAlignment = .center
+        nextButton.setTitleColor(.white, for: .normal)
         
-        Appearance.styleNavigation(button: previousButton)
-        Appearance.styleNavigation(button: nextButton)
+        
+        nextButton.backgroundColor = Appearance.secondaryColor
+        
+        nextButton.layer.borderColor = Appearance.secondaryColor.cgColor
+        nextButton.layer.borderWidth = 1
+        nextButton.layer.cornerRadius = 8
+        
+        nextButton.addTarget(self, action: #selector(nextButtonTouchDown(sender:)), for: .touchDown)
+        nextButton.addTarget(self, action: #selector(nextButtonTouchUp(sender:)), for: .touchUpInside)
+        
+        nextButton.sizeToFit()
     }
     
-    func clearButtons() {
-        Appearance.styleQuestion(button: answerOneButton)
-        Appearance.styleQuestion(button: answerTwoButton)
-        Appearance.styleQuestion(button: answerThreeButton)
-        Appearance.styleQuestion(button: answerFourButton)
+    private func createNavButtonStackView() {
+        navButtonStackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(navButtonStackView)
+        
+        navButtonStackView.axis = .horizontal
+        navButtonStackView.distribution = .fillEqually
+        navButtonStackView.alignment = .fill
+        navButtonStackView.spacing = 8
+        
+        navButtonStackView.addArrangedSubview(previousButton)
+        navButtonStackView.addArrangedSubview(nextButton)
+    }
+    
+    private func createMainStackView() {
+        mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(mainStackView)
+        
+        mainStackView.axis = .vertical
+        mainStackView.distribution = .fill
+        mainStackView.alignment = .fill
+        mainStackView.spacing = 8
+        
+        mainStackView.addArrangedSubview(questionTextLabel)
+        mainStackView.addArrangedSubview(answerStackView)
+        mainStackView.addArrangedSubview(navButtonStackView)
+
+
+        NSLayoutConstraint.activate([
+                mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
+                mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
+                mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            ])
+        
+    }
+    
+    private func clearButtons() {
+
     }
     
     @objc func buttonClicked(sender: UIButton){
@@ -187,35 +201,35 @@ class QuestionViewController: UIViewController {
             sender.layer.cornerRadius = 8
         }
         
-        guard let questionIndex = currentQuestion else { return }
-        guard let question = questionController else { return }
+//        guard let questionIndex = currentQuestion else { return }
+//        guard let question = questionController else { return }
         
-        question.listOfAnswers[questionIndex] = sender.titleLabel!.text!
+//        question.listOfAnswers[questionIndex] = sender.titleLabel!.text!
         
         itemSelected = true
 
     }
-
-    @IBAction func previousButtonTapped(_ sender: Any) {
+    
+    @objc func previousButtonTouchDown(sender: UIButton){
+        previousButton.setTitleColor(.gray, for: .normal)
+    }
+    
+    @objc func previousButtonTouchUp(sender: UIButton){
+        previousButton.setTitleColor(.white, for: .normal)
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func nextButtonTapped(_ sender: Any) {
-        
-        if !itemSelected {
-            let alert = UIAlertController(title: "Nothing Selected", message: "Please select an answer before continuing", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true)
-        } else {
-            if shouldFinish {
-                performSegue(withIdentifier: "ShowBook", sender: nil)
-            } else {
-                performSegue(withIdentifier: "NextQuestion", sender: nil)
-            }
-        }
-        
+    @objc func nextButtonTouchDown(sender: UIButton){
+        nextButton.setTitleColor(.gray, for: .normal)
     }
     
+    @objc func nextButtonTouchUp(sender: UIButton){
+        nextButton.setTitleColor(.white, for: .normal)
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "ReturnHome", sender: nil)
+    }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -235,5 +249,4 @@ class QuestionViewController: UIViewController {
         }
     }
     
-
 }

@@ -21,52 +21,10 @@ enum NetworkError: Error {
 }
 
 class Network {
-    var questions: [Question] = []
     var token: Token?
     
-    private let questionBaseURL = URL(string: "https://reading-recommender.firebaseio.com/")!
     private let baseURL = URL(string: "https://reading-recommender.herokuapp.com/")!
     
-    func getQuestions(completion: @escaping (Result<Question, NetworkError>) -> Void) {
-        let url = questionBaseURL.appendingPathExtension("json")
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = HTTPMethod.get.rawValue
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
-                NSLog("Bas response: \(response.statusCode)")
-                completion(.failure(.badResponse))
-                return
-            }
-            
-            if let error = error {
-                NSLog("Error: \(error)")
-                completion(.failure(.otherError))
-                return
-            }
-            
-            guard let data = data else {
-                NSLog("No data returned")
-                completion(.failure(.badData))
-                return
-            }
-            
-//            let question = try? newJSONDecoder().decode(Question.self, from: jsonData)
-
-            
-            let decoder = JSONDecoder()
-            do {
-                let questions = try decoder.decode(Question.self, from: data)
-                completion(.success(questions))
-            } catch {
-                NSLog("Could not decode data")
-                completion(.failure(.badData))
-                return
-            }
-        }.resume()
-        
-    }
     
     func signUp(for user: User, completion: @escaping (Error?) -> Void) {
         let url = baseURL.appendingPathComponent("api/signup")

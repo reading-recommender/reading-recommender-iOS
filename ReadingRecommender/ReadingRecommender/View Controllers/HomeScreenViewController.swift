@@ -43,7 +43,6 @@ class HomeScreenViewController: UIViewController {
             }
             
             destination.currentQuestion = 0
-            destination.numberOfAnsweredQuestions = 0
             destination.questionController = questionController
         }
     }
